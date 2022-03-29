@@ -240,116 +240,42 @@
         </div>
 
         <div class=" col-12 sm-6 col-md-8 col-lg-9">
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card link overflow-hidden w-100" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card link w-100" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card w-100 link" style="width: 18rem;">
-                        <img src="{{asset("img/2ndLead.jpg")}}" class="card-img-top img-fluid" alt="Tittle">
-                        <div class="card-body">
-                            <p class="card-text f-18">বাসার ভাই ৫৫৮ ‘এর চেয়ে ৫ লিটার সয়াবিন তেল কিনলে কাজ হতো’</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ১৩ ঘন্টা আগে</div>
-                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="row" id="secondLeadNews">
+                <!--SECOND LEAD NEWS -->
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    GetData('/get-all-news/1/second_lead/9', function(response){
+        if(response.status === 200){
+            let data = response.data;
+            let order = 9;
+            for(let i = 0;i < data.length; i++){
+               for(let j = 0;j < order; j++){
+                   if(data[i].order == j){
+                       SecondLead(data[i].title, data[i].image, data[i].date);
+                   }
+               }
+            }
+        }
+
+        function SecondLead(title,image,time){
+            $('#secondLeadNews').append(`
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
+                    <a href="#" class="card link overflow-hidden w-100" style="width: 18rem;">
+                        <img src="${image}" class="card-img-top img-fluid" alt="Tittle">
+                        <div class="card-body">
+                            <p class="card-text f-18">${title}</p>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex f-13 align-items-center"><i class="fas fa-clock" style="margin-right: 5px"></i> ${moment(time).locale('bn').startOf('hour').fromNow()}</div>
+                                <div class="f-13"><i class="fas fa-tags" style="margin-right: 5px"></i> অর্থনীতি </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `);
+        }
+    })
+</script>

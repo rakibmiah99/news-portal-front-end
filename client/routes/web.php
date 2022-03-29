@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Layout.app');
+    return view('Pages.HomePage');
+});
+
+Route::get('/Category', function () {
+    return view('Pages.CategoryPage');
+});
+
+Route::get('/Archive', function () {
+    return view('Pages.ArchivePage');
 });
 
 Route::get('/test', function () {
-    return view('Pages.TestPage');
+    return view('Welcome');
 });

@@ -1,3 +1,9 @@
+
+.pl-md-0{
+    padding-left: 0;
+}
+
+
 /* Responsive */
 @media (max-width: 339.98px) {
     .siteLogo img{
@@ -5,7 +11,8 @@
         height: 1rem;
     }
     .section-container{padding: 0 10px}
-
+    .section-container-inner{padding: 0 10px;}
+    .pl-md-0{padding-left: 20px!important;}
 
     /*------2nd lead news section------------*/
 }
@@ -16,6 +23,8 @@
         height: 1.5rem;
     }
     .section-container{padding: 0 10px}
+    .section-container-inner{padding: 0 10px;}
+    .pl-md-0{padding-left: 20px!important;}
     .flLead{
         order: 1;
     }
@@ -35,6 +44,8 @@
         height: 2.5rem;
     }
     .section-container{padding: 0 10px}
+    .section-container-inner{padding: 0 10px;}
+    .pl-md-0{padding-left: 20px!important;}
     .flLead{
         order: 1;
     }
@@ -55,6 +66,8 @@
         height: 2.5rem;
     }
     .section-container{padding: 0 10px}
+    .section-container-inner{padding: 0 10px;}
+    .pl-md-0{padding-left: 20px!important;}
     .flLead{
         order: 1;
     }
@@ -80,6 +93,13 @@
     .flRight{
         order: 3;
     }
+    .pl-md-0{padding-left: 40px!important;}
+
+    #politics .titleNews .news .image{
+        height: 60px;
+        width: 100px;
+        margin-right: 10px;
+    }
 
 
     /*------ 2nd lead news section------------*/
@@ -92,9 +112,13 @@
 @media (min-width: 1200px) {
 
 }
-@media (min-width: 1366px) {
-    .section-container{
+@media (min-width: 1400px) {
+    body{
         width: 1366px;
         margin: 0 auto;
+    }
+    .section-container{
+        width: 100%;
+
     }
 }
