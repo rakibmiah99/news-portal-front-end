@@ -15,39 +15,59 @@
     axios.get(site.url('/category')).then(function(response){
         if(response.status === 200){
             let data = response.data[0];
-            data.forEach(function (category){
-                if(category.sub_categories.length > 0){
-                    nav.append(`
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                ${category.name}
-                            </a>
-                            <ul id="sub${category.id}"  class="dropdown-menu" aria-labelledby="navbarDropdown">
+            let catLimit = 0;
+            let order = 9;
+            for(let i = 0; i < data.length; i++){
+                for(let j = 0; j < order; j++){
+                    if(data[i].order == j+1){
+                        if(data[i].visible == 1){
+                            if(data[i].sub_categories.length > 0){
+                                nav.append(`
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ${data[i].name}
+                                        </a>
+                                        <ul id="sub${data[i].id}"  class="dropdown-menu" >
 
-                            </ul>
-                        </li>
-                    `);
+                                        </ul>
+                                    </li>
+                                `);
 
+                                let subcat = data[i].sub_categories;
+                                let visibleItemList = [];
+                                for(let sci = 0; subcat.length > sci;sci++ ){
+                                    if(subcat[sci].visible == 1){
+                                        visibleItemList.push(sci);
+                                        $('#sub'+data[i].id).append(`
+                                            <li><a class="dropdown-item" href="/get-news-by-sub-category/${subcat[sci].id}">${subcat[sci].name}</a></li>
+                                        `);
+                                    }
+                                }
+                                $('#sub'+data[i].id).append(`
+                                    <li><a class="dropdown-item" href="/get-news-by-category/${data[i].id}">সকল  ${data[i].name}</a></li>
+                                `);
 
-                    category.sub_categories.forEach(function(sub){
-                        $('#sub'+category.id).append(`
-                            <li><a class="dropdown-item" href="#">${sub.name}</a></li>
-                        `);
-                    });
+                                //if All Category Visible in Subcategory then dropdown item remove
+                                if(visibleItemList.length < 1){
+                                    $('#sub'+data[i].id).prev().removeClass('dropdown-toggle');
+                                    $('#sub'+data[i].id).remove();
+                                }
+                            }else{
+                                nav.append(`
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/get-news-by-category/${data[i].id}">${data[i].name}</a>
+                                    </li>
+                                `);
+                            }
 
-                }else{
-                    nav.append(`
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">${category.name}</a>
-                        </li>
-                    `);
+                            catLimit++
+                            if(catLimit == 9){break}
+                        }
+                    }
                 }
-
-
-
-            })
+            }
         }
     }).catch(function (error){
         console.log(error)
-    })
+    });
 </script>

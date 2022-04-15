@@ -17,14 +17,32 @@ Route::get('/', function () {
     return view('Pages.HomePage');
 });
 
-Route::get('/Category', function () {
+Route::get('/Category/National', function () {
     return view('Pages.CategoryPage');
+});
+
+Route::get('/LocalNews', function (){
+    return view('Pages.LocalNewsPage');
 });
 
 Route::get('/Archive', function () {
     return view('Pages.ArchivePage');
 });
 
-Route::get('/test', function () {
-    return view('Welcome');
+Route::get('/we', function (){
+    return view('Pages.WePage');
+});
+Route::get('/SingleNews', function (){
+    return view('Pages.SingleNewsPage');
+});
+
+Route::get('/get-news/{NewsID}', function () {
+    return view('Pages.SingleNewsPage');
+});
+
+Route::get('/get-news-by-category/{CategoryId}/{SubCategoryId?}', function () {
+    return view('Pages.CategoryPage');
+});
+Route::get('/get-news-by-sub-category/{SubCategoryId}', function () {
+    return view('Pages.SubCategoryPage');
 });

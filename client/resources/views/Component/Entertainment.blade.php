@@ -2,6 +2,11 @@
     <div class="section-container">
         <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
             <h4 class="m-0">বিনোদন</h4>
+            <ul class="nav nav-tabs" role="tablist" id="EntertainPills">
+                <li class="nav-item">
+                    <a class="nav-link EntertainItem active" SubCategoryID="0" data-bs-toggle="tab" href="#allPloytics">সকল</a>
+                </li>
+            </ul>
             <button class="btn btn-danger rounded-pill">সকল</button>
         </div>
     </div>
@@ -9,40 +14,13 @@
 
 
 <div class="row section-container mt-2 ">
-    <div class="col-12 col-sm-6 order-sm-2 col-md-6 col-lg-6 col-xl-3 order-md-2 order-lg-2 order-xl-1">
+    <div class="col-12 col-sm-6 order-sm-2 col-md-6 col-lg-6 col-xl-3 order-md-2 order-lg-2 order-xl-1 mt-2">
         <div class="card" id="enterLeftSubLead">
-
+            <!--First Lead of Main Lead-->
         </div>
 
-        <div class="titleNews2 mt-2 border-left border-right">
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
+        <div class="titleNews2 mt-2 border-left border-right" id="enterSecondLead">
+            <!--ENTER SECOND LEAD OR LEFT SUB LEAD NEWS -->
         </div>
     </div>
 
@@ -59,110 +37,182 @@
 
 
 
-    <div class="col-12 col-sm-6 order-sm-3 col-md-6 col-lg-6 order-md-3 col-xl-3 order-lg-3 order-xl-3">
+    <div class="col-12 col-sm-6 order-sm-3 col-md-6 col-lg-6 order-md-3 col-xl-3 order-lg-3 order-xl-3 mt-2">
         <div class="card"  id="enterRightSubLead">
             <!--Right Sub Lead News-->
         </div>
 
-        <div class="titleNews2 mt-2 border-left border-right">
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
-            <a href="#" class="news link border-bottom mt-2 mb-2">
-                <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                <div>
-                    <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                </div>
-            </a>
+        <div class="titleNews2 mt-2 border-left border-right" id="enterRightSubNews">
+           <!--RIGHT SUB NEWS -->
         </div>
     </div>
 </div>
 
 <script>
-    //Left Right Sub Lead News
-    GetData('/get-all-news/6/sub_lead_news/2', function (response){
-       if(response.status === 200){
-           let data = response.data;
-           for(let i = 0; i < data.length; i++){
-               if(data[i].order === "1"){
-                   $('#enterLeftSubLead').append(`
-                    <img src="${data[i].image}" class="card-img"></img>
+
+    PillsCategory('/category-by-id/6','#EntertainPills','EntertainItem')
+
+    $('#EntertainPills').on('click','.EntertainItem',function (){
+        $('.EntertainItem').removeClass('disabled')
+        $(this).addClass('disabled')
+        let id = $(this).attr('SubCategoryID');
+        if(id === "0"){
+            EntertainAllNews();
+        }else{
+            getEnterSubNews(`/get-all-news/${id}/sub_lead_news/2/sub`);
+            GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/sub`)
+            GetEnterSecondLead(`/get-all-news/${id}/second_lead/4/sub`);
+            GetEnterSidebarNews(`/get-all-news/${id}/side_bar_news/4/sub`);
+        }
+    })
+
+
+
+
+    EntertainAllNews();
+
+    function EntertainAllNews() {
+        getEnterSubNews('/get-all-news/6/sub_lead_news/2');
+        GetEnterLeadNews('/get-all-news/6/lead_news/5');
+        GetEnterSecondLead('/get-all-news/6/second_lead/4');
+        GetEnterSidebarNews('/get-all-news/6/side_bar_news/4');
+    }
+
+
+    function getEnterSubNews(url){
+        GetData(url, function (response){
+            if(response.status === 200){
+                let data = response.data;
+                $('#enterLeftSubLead').empty();
+                $('#enterRightSubLead').empty();
+                for(let i = 0; i < data.length; i++){
+                    if(data[i].order === "1"){
+                        $('#enterLeftSubLead').append(`
+                    <img src="${data[i].image}" class="card-img">
                     <div class="card-body">
-                        <h5>${data[i].title}</h5>
+                        <h5 class="m-0">${data[i].title}</h5>
                     </div>
                    `)
-               }else if(data[i].order === "2"){
-                   $('#enterRightSubLead').append(`
-                        <img src="${data[i].image}" class="card-img"></img>
+                    }else if(data[i].order === "2"){
+                        $('#enterRightSubLead').append(`
+                        <img src="${data[i].image}" class="card-img">
                         <div class="card-body">
-                            <h5>${data[i].title}</h5>
+                            <h5 class="m-0">${data[i].title}</h5>
                         </div>
                    `)
-               }
-           }
-       }
-    });
+                    }
+                }
+            }
+        });
 
-    //MainLeadNews
-    GetData('/get-all-news/6/lead_news/5',function (response){
-        if(response.status === 200){
-            let data = response.data;
-            let order = 6;
+    }
 
-            for(let i = 0; i < data.length; i++){
-                if(data[i].order === "1"){
-                    $('#enterFirstLead').append(`
+
+    function GetEnterLeadNews(url){
+        GetData(url,function (response){
+            if(response.status === 200){
+                let data = response.data;
+                let order = 6;
+                $('#enterFirstLead').empty();
+                $('#enterAnotherLead').empty();
+                for(let i = 0; i < data.length; i++){
+                    if(data[i].order === "1"){
+                        $('#enterFirstLead').append(`
                         <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
-                            <img class="card-img" style="object-fit: cover" src="${data[i].image}" >
+                            <img class="card-img" style="height: 260px;" " style="object-fit: cover" src="${data[i].image}" >
                             <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
                                 <h4 class="card-title text-white p-2">${data[i].title}</h4>
                             </div>
                         </a>
                     `)
-                }else{
-                    for(let j = 2; j < order; j++){
-                        if(data[i].order == j){
-                            EnterAnotherLead(data[i].title, data[i].image);
+                    }else{
+                        for(let j = 2; j < order; j++){
+                            if(data[i].order == j){
+                                EnterAnotherLead(data[i].title, data[i].image);
+                            }
                         }
                     }
                 }
             }
+        })
+    }
 
 
-            function EnterAnotherLead(title,image){
-                $('#enterAnotherLead').append(`
-                    <div class="col-6">
-                        <div class="mt-2" style="padding-right: 0">
-                            <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
-                                <img class="card-img" style="object-fit: cover" src="${image}" >
-                                <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
-                                    <h5 class="card-title text-white line-1 p-2">${title}</h5>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                `)
+    function GetEnterSecondLead(url){
+        GetData(url,function(response){
+            if(response.status === 200 ){
+                let data = response.data;
+                let order = 4;
+                $('#enterSecondLead').empty();
+                for(let i = 0; i < data.length; i++){
+                    for(let j = 1; j < order; j++){
+                        if(data[i].order == j){
+                            EnterSecondLead(data[i].title, data[i].image,data[i].time);
+                        }
+                    }
+                }
             }
-        }
-    })
+        })
+    }
 
+
+    function GetEnterSidebarNews(url){
+        GetData(url,function(response){
+            if(response.status === 200){
+                let data = response.data;
+                let order = 4;
+                $('#enterRightSubNews').empty();
+                for(let i = 0; i < data.length; i++){
+                    for(let j = 1; j < order; j++){
+                        if(data[i].order == j){
+                            EnterSideSubLeadNews(data[i].title, data[i].image,data[i].time);
+                        }
+                    }
+                }
+            }
+        })
+    }
+
+
+
+
+
+    function EnterAnotherLead(title,image){
+        $('#enterAnotherLead').append(`
+            <div class="col-6">
+                <div class="mt-2" style="padding-right: 0">
+                    <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
+                        <img class="card-img" style="object-fit: cover;height: 132px;" src="${image}" >
+                        <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
+                            <h5 class="card-title text-white line-1 p-2">${title}</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        `)
+    }
+
+    function EnterSecondLead(title, image, time){
+        $('#enterSecondLead').append(`
+            <a href="#" class="news link border-bottom mt-2 mb-2">
+                <img class="image" style="height: 70px;" src="${image}">
+                <div>
+                    <h5 class="title line-2" style="margin-bottom: 5px!important;">${title}</h5>
+                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(time)}</div>
+                </div>
+            </a>
+        `)
+    }
+
+    function EnterSideSubLeadNews(title, image, time){
+        $('#enterRightSubNews').append(`
+            <a href="#" class="news link border-bottom mt-2 mb-2">
+                <img class="image" style="height: 70px;" src="${image}">
+                <div>
+                    <h5 class="title line-2" style="margin-bottom: 3px!important;">${title}</h5>
+                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(time)}</div>
+                </div>
+            </a>
+        `)
+    }
 </script>

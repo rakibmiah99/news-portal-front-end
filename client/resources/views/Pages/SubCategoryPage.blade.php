@@ -92,9 +92,9 @@
         let newsLimit = 20;
         GetData(url+"/"+newsLimit, function (response){
             if(response.status === 200){
-                let category = response.data.category;
+
+                let category = response.data['sub-category'];
                 let news = response.data.news;
-                console.log(news)
                 $('#DisplayCategoryName').html(category.name);
                 if(news.length > 0){
                     DisplayTopNews(news)

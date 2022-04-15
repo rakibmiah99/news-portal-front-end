@@ -17,21 +17,26 @@
                 let ul = "<ul class='list-group list-group-item-action list-group-flush'>";
 
 
-                data.forEach(function (category){
-                    if(category.sub_categories.length > 0){
-                       ul += `<a href="#" class="list-group-item list-group-item-action">${category.name}</a>`;
 
-                        category.sub_categories.forEach(function (sub){
-                            ul += `<a href="#" class="list-group-item list-group-item-action">${sub.name}</a>`;
-                        })
-                    }else{
-                        ul += `<a href="#" class="list-group-item list-group-item-action">${category.name}</a>`;
+                for(let i  = 0; i < data.length; i++){
+                    var category = data[i];
+
+                    if(category.visible == 1){
+                        if(category.sub_categories.length > 0){
+                            ul += `<a href="#" class="list-group-item list-group-item-action">${category.name}</a>`;
+
+
+                            for(let j = 0; j < category.sub_categories.length; j++ ){
+                                var sub = category.sub_categories[j];
+                                if(sub.visible == 1){
+                                    ul += `<a href="#" class="list-group-item list-group-item-action">${sub.name}</a>`;
+                                }
+                            }
+                        }else{
+                            ul += `<a href="#" class="list-group-item list-group-item-action">${category.name}</a>`;
+                        }
                     }
-
-
-
-                })
-
+                }
                 ul += "</ul>";
 
                 sideMenu.append(ul)

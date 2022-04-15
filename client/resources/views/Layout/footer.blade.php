@@ -12,13 +12,13 @@
                     <a class="link f-18" href="#">আমাদের সম্পর্কে</a>
                 </li>
                 <li class="footer-list-item">
-                    <a class="link f-18" href="#">আমরা</a>
+                    <a class="link f-18" href="/we">আমরা</a>
                 </li>
                 <li class="footer-list-item">
                     <a class="link f-18" href="#">যোগাযোগ</a>
                 </li>
                 <li class="footer-list-item">
-                    <a class="link f-18" href="#">আর্কাইভ</a>
+                    <a class="link f-18" href="/Archive">আর্কাইভ</a>
                 </li>
                 <li class="footer-list-item">
                     <a class="link f-18" href="#">বিজ্ঞাপন</a>

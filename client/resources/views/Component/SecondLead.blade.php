@@ -254,7 +254,7 @@
             let order = 9;
             for(let i = 0;i < data.length; i++){
                for(let j = 0;j < order; j++){
-                   if(data[i].order == j){
+                   if(data[i].order == j+1){
                        SecondLead(data[i].title, data[i].image, data[i].date);
                    }
                }

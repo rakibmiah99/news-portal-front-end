@@ -12,29 +12,28 @@
         </div>
 
         <div href="#" class="flLead col-12 col-sm-12 col-md-12 col-lg-6">
-            <a id="mainLead" style="height: 600px;display: block" class="link" href="#" >
+            <a id="mainLead" style="height: 480px;display: block" class="link" href="#" >
                 <!--MAIN FIRST LEAD NEWS -->
             </a>
-            <div class="titleNews2 row border-top" id="bottomMainLead">
+            <div class="titleNews row border-top" id="bottomMainLead">
                <!--BOTTOM MAIN LEAD -->
             </div>
         </div>
 
         <div class="flRight col-12 col-sm-12 col-md-6 col-lg-3 border-left" >
-            <!--                Advertise    -->
-            <div class="advertise mt-3 mb-3 text-center overflow-hidden">
-                <img  src="{{asset('img/300x300.gif')}}">
+            <!--               Advertise   --->
+            <div class="advertise mt-0 mb-1 text-center overflow-hidden">
+                <img height="250px"  src="{{asset('img/300x300.gif')}}">
             </div>
-
             <div class="motamot">
-                <h5 class="text-center p-2 border-top border-bottom fw-bold">মতামত</h5>
+                <h5 class="text-center p-2 mb-0 border-top border-bottom fw-bold">মতামত</h5>
                 <ul  class="list-group list-group-flush" id="motamotSection">
 
                 </ul>
             </div>
 
             <div class="corona">
-                <h5 class="text-center p-2 border-top border-bottom mt-3 fw-bold">করুনা আপডেট</h5>
+                <h5 class="text-center p-2 border-top border-bottom mt-1 mb-0 fw-bold">করুনা আপডেট</h5>
                 <div class="coronaTable d-flex">
                     <div class="coronaTableItem">
                         <div class="text-center lh-lg">বাংলাদেশ</div>
@@ -78,7 +77,7 @@
                     </div>
                 </div>
                 <div class="coronaActionBtn d-flex justify-content-center">
-                    <div class="mt-3">
+                    <div class="mt-0">
                         <button class="cnext btn btn-sm btn-secondary rounded-pill m-1"><i class="fas fa-angle-left"></i></button>
                         <button class="cprev btn btn-sm btn-secondary rounded-pill m-1"><i class="fas fa-angle-right"></i></button>
                     </div>
@@ -106,12 +105,12 @@
             `);
 
             //Side Lead News
-            function siteLeadNews(selectSection,image,title,time){
-                selectSection.append(`
+            function siteLeadNews(image,title,time){
+                $('#sideLeadNews').append(`
                     <a href="#" class="news link border-bottom  mb-3">
                         <img class="image" src="${image}">
                         <div>
-                            <h5 class="title m-0">র${title}</h5>
+                            <h5 class="title m-0 line-2" style="margin-bottom: 5px!important;">${title}</h5>
                             <p class="hour m-0"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${moment(time).locale('bn').startOf('hour').fromNow()}</p>
                         </div>
                     </a>
@@ -124,7 +123,7 @@
                     <a href="#" class="news link col-sm-6 border-bottom mt-2 mb-2">
                         <img class="image" src="${image}">
                         <div>
-                            <h5 class="title m-0">র${title}</h5>
+                            <h5 class="title line-2" style="margin-bottom: 5px!important;">${title}</h5>
                             <p class="hour m-0"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${moment(time).locale('bn').startOf('hour').fromNow()}</p>
                         </div>
                     </a>
@@ -132,21 +131,19 @@
             }
 
             for(let i = 1;data.length > i;i++){
-                if(data[i].order === "2"){
-                    siteLeadNews($('#sideLeadNews'),data[i].image,data[i].title, data[i].date)
-                }else if($('#sideLeadNews'),data[i].order === "3"){
+
+                if(data[i].order == "2"){
                     siteLeadNews(data[i].image,data[i].title, data[i].date)
-                }else if(data[i].order === "4"){
-                    siteLeadNews($('#sideLeadNews'),data[i].image,data[i].title, data[i].date)
-                }else if(data[i].order === "5"){
-                    siteLeadNews($('#sideLeadNews'),data[i].image,data[i].title, data[i].date)
+                }else if(data[i].order == "3"){
+                    siteLeadNews(data[i].image,data[i].title, data[i].date)
+                }else if(data[i].order == "4"){
+                    siteLeadNews(data[i].image,data[i].title, data[i].date)
                 }
 
                 //Bottom Leaed News
-                else if(data[i].order === "6"){
+                else if(data[i].order === "5"){
                     bottomLeadNews(data[i].image,data[i].title, data[i].date)
-                }else if(data[i].order === "7"){
-
+                }else if(data[i].order === "6"){
                     bottomLeadNews(data[i].image,data[i].title, data[i].date)
                 }
 
@@ -154,23 +151,25 @@
 
         }
     }).catch(function(error){
-        console.log(error)
+        console.log({...error})
     });
 
 
     //Motamot
     GetData('/get-all-opinion/1',function(res){
         if(res.status === 200){
-                let data = res.data[0];
-                if(data.order === "1"){
-                    motamot(data.image_file,data.title,data.short_description)
+                let data = res.data;
+                for(let i =0; i< data.length; i++){
+                    if(data[i].order === "1"){
+                        motamot(data[i].image_file,data[i].title,data[i].short_description)
+                    }
                 }
         }
 
         //Motamot Function
         function motamot(image,title,name){
             $('#motamotSection').append(`
-                    <a href="#" class="list-group-item link border-bottom list-group-item-action d-flex">
+                    <a href="#" class="list-group-item link d-flex align-items-center border-bottom list-group-item-action d-flex">
                         <img style="margin-right: 10px;" src="${image}" class="rounded-circle" height="80px" width="80px">
                         <div class="motamot-text">
                             <h5 class="m-0">${title}</h5>
@@ -207,4 +206,7 @@
             prevArrow: '.cprev'
         });
     });
+
+
+
 </script>
