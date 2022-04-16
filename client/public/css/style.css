@@ -525,3 +525,18 @@ body {
 .keyword-link2 a:hover{
    color: #0a53be;
 }
+
+
+.nav-tabs{
+
+}
+.nav-tabs .nav-link{
+    padding: 4px 15px;
+    border: none;
+}
+
+.nav-tabs .nav-link.active{
+    border: none;
+    border-radius: 0;
+    background-color: #f2f2f2;
+}

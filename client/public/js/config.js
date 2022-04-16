@@ -69,18 +69,84 @@ function PillsCategory(url,selector,clickableClassName){
         if(response.status === 200){
             let subCategories = response.data.sub_categories;
             let pills = $(selector);
-            subCategories.forEach(function (item,index){
-                if(subCategories[index].visible == "1"){
-                    pills.append(`
-                     <li class="nav-item">
-                        <a class="nav-link ${clickableClassName}" data-bs-toggle="tab" SubCategoryID="${item.id}" href="#">${item.name}</a>
-                    </li>
-                `)
-                }
-            })
+            if(subCategories < 1){
+                pills.remove();
+            }
+            else {
+                subCategories.forEach(function (item,index){
+                    if(subCategories[index].visible == "1"){
+                        pills.append(`
+                             <li class="nav-item">
+                                <a class="nav-link ${clickableClassName}" data-bs-toggle="tab" SubCategoryID="${item.id}" href="#">${item.name}</a>
+                            </li>
+                        `)
+                    }
+                })
+            }
         }
     })
 }
+
+
+
+
+
+function GetComponentNews(url,element){
+    GetData(url, function (response){
+        if(response.status === 200 ){
+            let data = response.data;
+            let order = 1;
+            $(element).empty();
+            for(let i = 0; i < data.length; i++){
+                for(let j = 0; j < order; j++){
+                    if(data[i].order == j+1){
+                        LeadNews(data[i].image,data[i].title)
+                    }
+                }
+            }
+
+            function LeadNews(image,title){
+                $(element).append(`
+                            <div class="card" >
+                                <img src="${image}" class="card-img">
+                                <div class="card-body">
+                                    <h5>${title}</h5>
+                                </div>
+                            </div>
+                        `)
+            }
+        }
+    });
+}
+function GetComponentSubNews(url,element){
+    GetData(url, function (response){
+        if(response.status === 200 ){
+            let data = response.data;
+            let order = 2;
+            $(element).empty();
+            for(let i = 0; i < data.length; i++){
+                for(let j = 0; j < order; j++){
+                    if(data[i].order == j+1){
+                        SubNews(data[i].image,data[i].title,data[i].date)
+                    }
+                }
+            }
+            function SubNews(image,title,time){
+                $(element).append(`
+                             <a href="#" class="news link border-bottom">
+                                <img class="image" style="height: 70px" src="${image}">
+                                <div>
+                                    <h5 class="title m-0 line-2" style="margin-bottom: 5px!important;">${title}</h5>
+                                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(time)}</div>
+                                </div>
+                            </a>
+                        `)
+            }
+        }
+    });
+}
+
+
 
 
 

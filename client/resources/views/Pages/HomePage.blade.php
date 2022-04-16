@@ -17,9 +17,9 @@
     @include('Component.Entertainment')
     @include('Component.SampleComonent1')
     @include('Component.SampleComponent2')
-{{--    @include('Component.SampleComponent3')--}}
-{{--    @include('Component.Feature')--}}
-{{--    @include('Component.Video')--}}
-{{--    @include('Component.ImageGallery')--}}
+    @include('Component.SampleComponent3')
+    @include('Component.Feature')
+    @include('Component.Video')
+    @include('Component.ImageGallery')
 
 @endsection

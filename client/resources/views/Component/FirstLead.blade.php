@@ -12,9 +12,9 @@
         </div>
 
         <div href="#" class="flLead col-12 col-sm-12 col-md-12 col-lg-6">
-            <a id="mainLead" style="height: 480px;display: block" class="link" href="#" >
+            <div id="mainLead">
                 <!--MAIN FIRST LEAD NEWS -->
-            </a>
+            </div>
             <div class="titleNews row border-top" id="bottomMainLead">
                <!--BOTTOM MAIN LEAD -->
             </div>
@@ -93,21 +93,22 @@
 <script>
     axios.get(site.url('/get-all-news/1/lead_news/7')).then(function(response){
         if(response.status === 200){
-            //console.log(response)
             let data = response.data;
             let mainLead = data[0];
-
             //Main Lead
             $('#mainLead').append(`
-                <img  class="image img-fluid" src="${mainLead.image}">
-                <h2 class="mt-2">${mainLead.title}</h2>
-                <p>${mainLead.sort_description}</p>
+                <a id="mainLead" style="height: 480px;display: block" class="link" href="/get-news/${mainLead.id}" >
+                    <img  class="image img-fluid" src="${mainLead.image}">
+                    <h2 class="mt-2">${mainLead.title}</h2>
+                    <p>${mainLead.sort_description}</p>
+
+                </a>
             `);
 
             //Side Lead News
-            function siteLeadNews(image,title,time){
+            function siteLeadNews(newsID,image,title,time){
                 $('#sideLeadNews').append(`
-                    <a href="#" class="news link border-bottom  mb-3">
+                    <a href="/get-news/${newsID}" class="news link border-bottom  mb-3">
                         <img class="image" src="${image}">
                         <div>
                             <h5 class="title m-0 line-2" style="margin-bottom: 5px!important;">${title}</h5>
@@ -118,9 +119,9 @@
             }
 
             //function Bottom Lead News
-            function bottomLeadNews(image,title,time){
+            function bottomLeadNews(newsID,image,title,time){
                 $('#bottomMainLead').append(`
-                    <a href="#" class="news link col-sm-6 border-bottom mt-2 mb-2">
+                    <a href="/get-news/${newsID}" class="news link col-sm-6 border-bottom mt-2 mb-2">
                         <img class="image" src="${image}">
                         <div>
                             <h5 class="title line-2" style="margin-bottom: 5px!important;">${title}</h5>
@@ -133,18 +134,18 @@
             for(let i = 1;data.length > i;i++){
 
                 if(data[i].order == "2"){
-                    siteLeadNews(data[i].image,data[i].title, data[i].date)
+                    siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
                 }else if(data[i].order == "3"){
-                    siteLeadNews(data[i].image,data[i].title, data[i].date)
+                    siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
                 }else if(data[i].order == "4"){
-                    siteLeadNews(data[i].image,data[i].title, data[i].date)
+                    siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
                 }
 
                 //Bottom Leaed News
                 else if(data[i].order === "5"){
-                    bottomLeadNews(data[i].image,data[i].title, data[i].date)
+                    bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
                 }else if(data[i].order === "6"){
-                    bottomLeadNews(data[i].image,data[i].title, data[i].date)
+                    bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
                 }
 
             }

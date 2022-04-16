@@ -2,36 +2,24 @@
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
         <div class="mt-5">
             <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
-                <h4 class="m-0">সাস্থ্য</h4>
+                <h4 class="m-0">লাইফ-স্টাইল</h4>
+                <ul class="nav nav-tabs" role="tablist" id="LifeStylePills">
+                    <li class="nav-item">
+                        <a class="nav-link LifeStyleItem active" SubCategoryID="0" data-bs-toggle="tab" href="#">সকল</a>
+                    </li>
+                </ul>
                 <button class="btn btn-danger rounded-pill">সকল</button>
             </div>
         </div>
 
         <div class="row mt-3">
-
-            <div class="col-12">
-                <div class="card">
-                    <img src="https://assets.dhakapost.com/media/imgAll/BG/2022February/prova-1-20220318175329.jpg?width=330&height=175" class="card-img">
-                    <div class="card-body">
-                        <h5>মহেশ বাবুর সিনেমায় মেয়ে সিতারা, এক ঝলকে উঠল ঝড়! </h5>
-                    </div>
+            <div class="col-12" >
+                <div id="LifeStyleLeadNews">
+                    <!-- LifeStyle Lead News -->
                 </div>
 
-                <div class="card titleNews2 mt-2 border-left border-right">
-                    <a href="#" class="news link border-bottom">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
+                <div class="card titleNews2 mt-2 border-left border-right" id="LifeStyleSubNews">
+                    <!-- LifeStyle Sub News -->
                 </div>
             </div>
         </div>
@@ -40,35 +28,24 @@
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
         <div class="mt-5">
             <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
-                <h4 class="m-0">সাস্থ্য</h4>
+                <h4 class="m-0">তথ্য-প্রযুক্তি</h4>
+                <ul class="nav nav-tabs" role="tablist" id="TechnologyPills">
+                    <li class="nav-item">
+                        <a class="nav-link TechnologyItem active" SubCategoryID="0" data-bs-toggle="tab" href="#">সকল</a>
+                    </li>
+                </ul>
                 <button class="btn btn-danger rounded-pill">সকল</button>
             </div>
         </div>
 
         <div class="row mt-3">
-            <div class="col-12">
-                <div class="card">
-                    <img src="https://assets.dhakapost.com/media/imgAll/BG/2022February/prova-1-20220318175329.jpg?width=330&height=175" class="card-img">
-                    <div class="card-body">
-                        <h5>মহেশ বাবুর সিনেমায় মেয়ে সিতারা, এক ঝলকে উঠল ঝড়! </h5>
-                    </div>
+            <div class="col-12" >
+                <div id="TechnologyLeadNews">
+                    <!-- Jobs Lead News -->
                 </div>
 
-                <div class="card titleNews2 mt-2 border-left border-right">
-                    <a href="#" class="news link border-bottom ">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom ">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
+                <div class="card titleNews2 mt-2 border-left border-right" id="TechnologySubNews">
+                    <!-- Jobs Sub News -->
                 </div>
             </div>
         </div>
@@ -76,35 +53,24 @@
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
         <div class="mt-5">
             <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
-                <h4 class="m-0">সাস্থ্য</h4>
+                <h4 class="m-0">ধর্ম</h4>
+                <ul class="nav nav-tabs" role="tablist" id="RigionPills">
+                    <li class="nav-item">
+                        <a class="nav-link RigionItem active" SubCategoryID="0" data-bs-toggle="tab" href="#">সকল</a>
+                    </li>
+                </ul>
                 <button class="btn btn-danger rounded-pill">সকল</button>
             </div>
         </div>
 
         <div class="row mt-3">
-            <div class="col-12">
-                <div class="card">
-                    <img src="https://assets.dhakapost.com/media/imgAll/BG/2022February/prova-1-20220318175329.jpg?width=330&height=175" class="card-img">
-                    <div class="card-body">
-                        <h5>মহেশ বাবুর সিনেমায় মেয়ে সিতারা, এক ঝলকে উঠল ঝড়! </h5>
-                    </div>
+            <div class="col-12" >
+                <div id="RigionLeadNews">
+                    <!-- Rigion Lead News -->
                 </div>
 
-                <div class="card titleNews2 mt-2 border-left border-right">
-                    <a href="#" class="news link border-bottom ">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom ">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
+                <div class="card titleNews2 mt-2 border-left border-right" id="RigionSubNews">
+                    <!-- Rigion Sub News -->
                 </div>
             </div>
         </div>
@@ -112,39 +78,110 @@
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
         <div class="mt-5">
             <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
-                <h4 class="m-0">সাস্থ্য</h4>
+                <h4 class="m-0">সারাদেশ</h4>
+                <ul class="nav nav-tabs" role="tablist" id="SaradeshPills">
+                    <li class="nav-item">
+                        <a class="nav-link SaradeshItem active" SubCategoryID="0" data-bs-toggle="tab" href="#">সকল</a>
+                    </li>
+                </ul>
                 <button class="btn btn-danger rounded-pill">সকল</button>
             </div>
         </div>
-
         <div class="row mt-3">
-            <div class="col-12">
-                <div class="card">
-                    <img src="https://assets.dhakapost.com/media/imgAll/BG/2022February/prova-1-20220318175329.jpg?width=330&height=175" class="card-img">
-                    <div class="card-body">
-                        <h5>মহেশ বাবুর সিনেমায় মেয়ে সিতারা, এক ঝলকে উঠল ঝড়! </h5>
-                    </div>
+            <div class="col-12" >
+                <div id="SaradeshLeadNews">
+                    <!-- Jobs Lead News -->
                 </div>
 
-                <div class="card titleNews2 mt-2 border-left border-right">
-                    <a href="#" class="news link border-bottom ">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom ">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
+                <div class="card titleNews2 mt-2 border-left border-right" id="SaradeshSubNews">
+                    <!-- Jobs Sub News -->
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    /*---  LifeStyle Section --------*/
+    PillsCategory('/category-by-id/13','#LifeStylePills','LifeStyleItem')
+    $('#LifeStylePills').on('click','.LifeStyleItem',function (){
+        $('.LifeStyleItem').removeClass('disabled')
+        $(this).addClass('disabled')
+        let id = $(this).attr('SubCategoryID');
+        if(id === "0"){
+            AllLifeStyleNews();
+        }else{
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#LifeStyleLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#LifeStyleSubNews')
+        }
+    })
+    AllLifeStyleNews();
+    function AllLifeStyleNews(){
+        GetComponentNews('/get-all-news/13/lead_news/1','#LifeStyleLeadNews');
+        GetComponentSubNews('/get-all-news/13/side_bar_news/2','#LifeStyleSubNews');
+    }
+    /*---------- END Lify Style Section ------------*/
+
+
+    /*---  Technology Section --------*/
+    PillsCategory('/category-by-id/15','#TechnologyPills','TechnologyItem')
+    $('#TechnologyPills').on('click','.TechnologyItem',function (){
+        $('.TechnologyItem').removeClass('disabled')
+        $(this).addClass('disabled')
+        let id = $(this).attr('SubCategoryID');
+        if(id === "0"){
+            AllTechnologyNews();
+        }else{
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#TechnologyLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#TechnologySubNews')
+        }
+    })
+    AllTechnologyNews();
+    function AllTechnologyNews(){
+        GetComponentNews('/get-all-news/15/lead_news/1','#TechnologyLeadNews');
+        GetComponentSubNews('/get-all-news/15/side_bar_news/2','#TechnologySubNews');
+    }
+    /*---------- END Jobs Section ------------*/
+
+    /*---  Rigion Section --------*/
+    PillsCategory('/category-by-id/16','#RigionPills','RigionItem')
+    $('#RigionPills').on('click','.RigionItem',function (){
+        $('.RigionItem').removeClass('disabled')
+        $(this).addClass('disabled')
+        let id = $(this).attr('SubCategoryID');
+        if(id === "0"){
+            AllRigionNews();
+        }else{
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#RigionLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#RigionSubNews')
+        }
+    })
+    AllRigionNews();
+    function AllRigionNews(){
+        GetComponentNews('/get-all-news/16/lead_news/1','#RigionLeadNews');
+        GetComponentSubNews('/get-all-news/16/side_bar_news/2','#RigionSubNews');
+    }
+    /*---------- END Rigion Section ------------*/
+
+    /*---  Saradesh Section --------*/
+    PillsCategory('/category-by-id/17','#SaradeshPills','SaradeshItem')
+    $('#SaradeshPills').on('click','.SaradeshItem',function (){
+        $('.SaradeshItem').removeClass('disabled')
+        $(this).addClass('disabled')
+        let id = $(this).attr('SubCategoryID');
+        if(id === "0"){
+            AllSaradeshNews();
+        }else{
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#SaradeshLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#SaradeshSubNews')
+        }
+    })
+    AllSaradeshNews();
+    function AllSaradeshNews(){
+        GetComponentNews('/get-all-news/17/lead_news/1','#SaradeshLeadNews');
+        GetComponentSubNews('/get-all-news/17/side_bar_news/2','#SaradeshSubNews');
+    }
+    /*---------- END Saradesh Section ------------*/
+</script>
 
 
