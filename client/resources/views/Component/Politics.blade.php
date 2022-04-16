@@ -60,136 +60,124 @@
 
 <script>
 
-    PillsCategory('/category-by-id/2','#PoliticsPills','PoliticsItem')
-    /*
-    GetData('/category-by-id/2',function (response){
-        if(response.status === 200){
-            let subCategories = response.data.sub_categories;
-            let pills = $('#PoliticsPills');
-            subCategories.forEach(function (item,index){
-                if(subCategories[index].visible == "1"){
-                    pills.append(`
-                     <li class="nav-item">
-                        <a class="nav-link PoliticsItem" data-bs-toggle="tab" SubCategoryID="${item.id}" href="#">${item.name}</a>
-                    </li>
-                `)
-                }
-            })
-        }
-    })
-   */
+    HomePolitics()
 
-    $('#PoliticsPills').on('click','.PoliticsItem',function (){
-        $('.PoliticsItem').removeClass('disabled')
-        $(this).addClass('disabled')
-        let id = $(this).attr('SubCategoryID');
-        let politicsLeadNews = $('#politicsLeadNews');
-        let politicsSideNews = $('#politicsSideNews');
-        if(id === "0"){
-            AllPoliticsNews();
-        }else{
-            GetData(`/get-all-news/${id}/lead_news/4/sub`, function (response){
-                if(response.status === 200){
-                    politicsLeadNews.empty();
-                    let data = response.data;
-                    if(data.length > 0){
-                        let order = 5;
-                        for(let i = 0; i < data.length; i++){
-                            for(let j = 0; j < order; j++){
-                                if(data[i].order == j){
-                                    PoliticsLeadNews(data[i].title, data[i].sort_description , data[i].image, data[i].date);
+    function HomePolitics(){
+        PillsCategory('/category-by-id/2','#PoliticsPills','PoliticsItem')
+
+        $('#PoliticsPills').on('click','.PoliticsItem',function (){
+            BodyLoaderON();
+            $('.PoliticsItem').removeClass('disabled')
+            $(this).addClass('disabled')
+            let id = $(this).attr('SubCategoryID');
+            let politicsLeadNews = $('#politicsLeadNews');
+            let politicsSideNews = $('#politicsSideNews');
+            if(id === "0"){
+                AllPoliticsNews();
+            }else{
+                GetData(`/get-all-news/${id}/lead_news/4/sub`, function (response){
+                    if(response.status === 200){
+                        politicsLeadNews.empty();
+                        let data = response.data;
+                        if(data.length > 0){
+                            let order = 5;
+                            for(let i = 0; i < data.length; i++){
+                                for(let j = 0; j < order; j++){
+                                    if(data[i].order == j){
+                                        PoliticsLeadNews(data[i].title, data[i].sort_description , data[i].image, data[i].date);
+                                    }
                                 }
                             }
+                        }else{
+                            politicsLeadNews.append(ErrorNotFoundData())
                         }
-                    }else{
-                        politicsLeadNews.append(ErrorNotFoundData())
                     }
-                }
-            });
+                });
 
-            //Side News
-            GetData(`/get-all-news/${id}/side_bar_news/7/sub`,function (response){
-                if(response.status === 200){
-                    politicsSideNews.empty();
-                    let data = response.data;
-                    if(data.length > 0){
-                        let order = 7;
-                        for(let i = 0; i < data.length; i++){
-                            for(let j = 0; j < order; j++){
-                                if(data[i].order == j+1){
-                                    PoliticsSideNews(data[i].title, data[i].image, data[i].date);
+                //Side News
+                GetData(`/get-all-news/${id}/side_bar_news/7/sub`,function (response){
+                    if(response.status === 200){
+                        BodyLoaderOFF();
+                        politicsSideNews.empty();
+                        let data = response.data;
+                        if(data.length > 0){
+                            let order = 7;
+                            for(let i = 0; i < data.length; i++){
+                                for(let j = 0; j < order; j++){
+                                    if(data[i].order == j+1){
+                                        PoliticsSideNews(data[i].title, data[i].image, data[i].date);
+                                    }
                                 }
                             }
+                        }else{
+                            politicsSideNews.append(ErrorNotFoundData())
                         }
-                    }else{
-                        politicsSideNews.append(ErrorNotFoundData())
                     }
-                }
-            });
-        }
-    })
+                });
+            }
+        })
 
 
-    AllPoliticsNews()
+        AllPoliticsNews()
 
 
 
-    //Area Filter
-    GetData('/get-all-divisions', function (response){
-       if(response.status === 200){
-           let data = response.data;
-           data.forEach(function (item){
-               $('#division').append(`
+        //Area Filter
+        GetData('/get-all-divisions', function (response){
+            if(response.status === 200){
+                let data = response.data;
+                data.forEach(function (item){
+                    $('#division').append(`
                 <option value="${item.id}">${item.bn_name}</option>
                `)
-           })
-       }
-    });
-
-    //Division Wise District
-    $('#areaFilter').on('change','#division', function(){
-        let divisionID = $(this).val();
-        $('#district').empty();
-        $('#upazila').empty();
-        $('#upazila').append(`<option value="">উপজেলা</option>`)
-        $('#district').append(`<option value="">জেলা</option>`)
-        GetData('/get-all-district-by-division/'+divisionID, function (response){
-            if(response.status === 200){
-                let data = response.data;
-                data.forEach(function (item){
-                    $('#district').append(`
-                        <option value="${item.id}">${item.bn_name}</option>
-                    `)
                 })
             }
         });
-    });
 
-
-
-    //District Wise Upazila
-    $('#areaFilter').on('change','#district', function(){
-        let districtID = $(this).val();
-        $('#upazila').empty();
-        $('#upazila').append(`<option value="">উপজেলা</option>`)
-        GetData('/get-all-upozilla-by-district/'+districtID, function (response){
-            if(response.status === 200){
-                let data = response.data;
-                data.forEach(function (item){
-                    $('#upazila').append(`
+        //Division Wise District
+        $('#areaFilter').on('change','#division', function(){
+            let divisionID = $(this).val();
+            $('#district').empty();
+            $('#upazila').empty();
+            $('#upazila').append(`<option value="">উপজেলা</option>`)
+            $('#district').append(`<option value="">জেলা</option>`)
+            GetData('/get-all-district-by-division/'+divisionID, function (response){
+                if(response.status === 200){
+                    let data = response.data;
+                    data.forEach(function (item){
+                        $('#district').append(`
                         <option value="${item.id}">${item.bn_name}</option>
                     `)
-                })
-            }
+                    })
+                }
+            });
         });
-    });
+
+
+
+        //District Wise Upazila
+        $('#areaFilter').on('change','#district', function(){
+            let districtID = $(this).val();
+            $('#upazila').empty();
+            $('#upazila').append(`<option value="">উপজেলা</option>`)
+            GetData('/get-all-upozilla-by-district/'+districtID, function (response){
+                if(response.status === 200){
+                    let data = response.data;
+                    data.forEach(function (item){
+                        $('#upazila').append(`
+                        <option value="${item.id}">${item.bn_name}</option>
+                    `)
+                    })
+                }
+            });
+        });
 
 
 
 
-    //functions
-    function PoliticsLeadNews(title, subTitle, image, time){
-        $('#politicsLeadNews').append(`
+        //functions
+        function PoliticsLeadNews(title, subTitle, image, time){
+            $('#politicsLeadNews').append(`
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <a href="#" class="card mt-3 w-100 link" style="height: 310px;">
                     <img height="150px" style="object-fit: cover" src="${image}" height="180px" class="card-img-top" alt="${title}">
@@ -204,10 +192,10 @@
                 </a>
             </div>
         `)
-    }
+        }
 
-    function PoliticsSideNews(title,image,time){
-        $('#politicsSideNews').append(`
+        function PoliticsSideNews(title,image,time){
+            $('#politicsSideNews').append(`
                 <a href="#" class="news link border-bottom mt-0 mb-0">
                     <img class="image" src="${image}">
                     <div>
@@ -216,53 +204,51 @@
                     </div>
                 </a>
             `)
-    }
+        }
 
 
-    function AllPoliticsNews(){
-        let politicsLeadNews = $('#politicsLeadNews');
-        let politicsSideNews = $('#politicsSideNews');
-        GetData('/get-all-news/2/lead_news/4',function (response){
-            if(response.status === 200){
-                politicsLeadNews.empty();
-                let data = response.data;
-                if(data.length > 0){
-                    let order = 5;
-                    for(let i = 0; i < data.length; i++){
-                        for(let j = 0; j < order; j++){
-                            if(data[i].order == j){
-                                PoliticsLeadNews(data[i].title, data[i].sort_description , data[i].image, data[i].date);
+        function AllPoliticsNews(){
+            let politicsLeadNews = $('#politicsLeadNews');
+            let politicsSideNews = $('#politicsSideNews');
+            GetData('/get-all-news/2/lead_news/4',function (response){
+                if(response.status === 200){
+                    politicsLeadNews.empty();
+                    let data = response.data;
+                    if(data.length > 0){
+                        let order = 5;
+                        for(let i = 0; i < data.length; i++){
+                            for(let j = 0; j < order; j++){
+                                if(data[i].order == j){
+                                    PoliticsLeadNews(data[i].title, data[i].sort_description , data[i].image, data[i].date);
+                                }
                             }
                         }
+                    }else{
+                        politicsSideNews.append(ErrorNotFoundData())
                     }
-                }else{
-                    politicsSideNews.append(ErrorNotFoundData())
                 }
-            }
-        })
+            })
 
-        //Side News
-        GetData('/get-all-news/2/side_bar_news/7',function (response){
-            if(response.status === 200){
-                politicsSideNews.empty();
-                let data = response.data;
-                if(data.length > 0){
-                    let order = 7;
-                    for(let i = 0; i < data.length; i++){
-                        for(let j = 0; j < order; j++){
-                            if(data[i].order == j+1){
-                                PoliticsSideNews(data[i].title, data[i].image, data[i].date);
+            //Side News
+            GetData('/get-all-news/2/side_bar_news/7',function (response){
+                if(response.status === 200){
+                    politicsSideNews.empty();
+                    let data = response.data;
+                    if(data.length > 0){
+                        let order = 7;
+                        for(let i = 0; i < data.length; i++){
+                            for(let j = 0; j < order; j++){
+                                if(data[i].order == j+1){
+                                    PoliticsSideNews(data[i].title, data[i].image, data[i].date);
+                                }
                             }
                         }
+                    }else{
+                        PoliticsSideNews.append(ErrorNotFoundData())
                     }
-                }else{
-                    PoliticsSideNews.append(ErrorNotFoundData())
                 }
-
-            }
-        });
+            });
+        }
     }
-
-
 </script>
 

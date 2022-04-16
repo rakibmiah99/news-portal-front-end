@@ -24,6 +24,9 @@ Route::get('/Category/National', function () {
 Route::get('/LocalNews', function (){
     return view('Pages.LocalNewsPage');
 });
+Route::get('/get-trending-news/{id}', function (){
+    return view('Pages.TrendingPage');
+});
 
 Route::get('/Archive', function () {
     return view('Pages.ArchivePage');

@@ -91,12 +91,16 @@
 
 
 <script>
-    axios.get(site.url('/get-all-news/1/lead_news/7')).then(function(response){
-        if(response.status === 200){
-            let data = response.data;
-            let mainLead = data[0];
-            //Main Lead
-            $('#mainLead').append(`
+
+    HomeFirstLead();
+
+    function HomeFirstLead(){
+        axios.get(site.url('/get-all-news/1/lead_news/7')).then(function(response){
+            if(response.status === 200){
+                let data = response.data;
+                let mainLead = data[0];
+                //Main Lead
+                $('#mainLead').append(`
                 <a id="mainLead" style="height: 480px;display: block" class="link" href="/get-news/${mainLead.id}" >
                     <img  class="image img-fluid" src="${mainLead.image}">
                     <h2 class="mt-2">${mainLead.title}</h2>
@@ -105,9 +109,9 @@
                 </a>
             `);
 
-            //Side Lead News
-            function siteLeadNews(newsID,image,title,time){
-                $('#sideLeadNews').append(`
+                //Side Lead News
+                function siteLeadNews(newsID,image,title,time){
+                    $('#sideLeadNews').append(`
                     <a href="/get-news/${newsID}" class="news link border-bottom  mb-3">
                         <img class="image" src="${image}">
                         <div>
@@ -116,11 +120,11 @@
                         </div>
                     </a>
                 `);
-            }
+                }
 
-            //function Bottom Lead News
-            function bottomLeadNews(newsID,image,title,time){
-                $('#bottomMainLead').append(`
+                //function Bottom Lead News
+                function bottomLeadNews(newsID,image,title,time){
+                    $('#bottomMainLead').append(`
                     <a href="/get-news/${newsID}" class="news link col-sm-6 border-bottom mt-2 mb-2">
                         <img class="image" src="${image}">
                         <div>
@@ -129,47 +133,48 @@
                         </div>
                     </a>
                 `);
-            }
-
-            for(let i = 1;data.length > i;i++){
-
-                if(data[i].order == "2"){
-                    siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
-                }else if(data[i].order == "3"){
-                    siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
-                }else if(data[i].order == "4"){
-                    siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
                 }
 
-                //Bottom Leaed News
-                else if(data[i].order === "5"){
-                    bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
-                }else if(data[i].order === "6"){
-                    bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                for(let i = 1;data.length > i;i++){
+
+                    if(data[i].order == "2"){
+                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                    }else if(data[i].order == "3"){
+                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                    }else if(data[i].order == "4"){
+                        siteLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                    }
+
+                    //Bottom Leaed News
+                    else if(data[i].order === "5"){
+                        bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                    }else if(data[i].order === "6"){
+                        bottomLeadNews(data[i].id,data[i].image,data[i].title, data[i].date)
+                    }
+
                 }
-
             }
-
-        }
-    }).catch(function(error){
-        console.log({...error})
-    });
+        }).catch(function(error){
+            console.log({...error})
+        });
 
 
-    //Motamot
-    GetData('/get-all-opinion/1',function(res){
-        if(res.status === 200){
+        //Motamot
+        GetData('/get-all-opinion/1',function(res){
+            if(res.status === 200){
                 let data = res.data;
                 for(let i =0; i< data.length; i++){
                     if(data[i].order === "1"){
                         motamot(data[i].image_file,data[i].title,data[i].short_description)
                     }
                 }
-        }
+            }else{
 
-        //Motamot Function
-        function motamot(image,title,name){
-            $('#motamotSection').append(`
+            }
+
+            //Motamot Function
+            function motamot(image,title,name){
+                $('#motamotSection').append(`
                     <a href="#" class="list-group-item link d-flex align-items-center border-bottom list-group-item-action d-flex">
                         <img style="margin-right: 10px;" src="${image}" class="rounded-circle" height="80px" width="80px">
                         <div class="motamot-text">
@@ -178,21 +183,24 @@
                         </div>
                     </a>
                 `)
-        }
-    })
+            }
+        })
 
-    //Corona Update
-    GetData('/get-all-info',function(res){
-        if(res.status === 200){
-            let c = res.data;
-            $('#bnTotal').append(c[0].info_value);
-            $('#bnRecover').append(c[1].info_value);
-            $('#bnDeath').append(c[2].info_value);
-            $('#inTotal').append(c[3].info_value);
-            $('#inRecover').append(c[4].info_value);
-            $('#inDeath').append(c[5].info_value);
-        }
-    })
+        //Corona Update
+        GetData('/get-all-info',function(res){
+            if(res.status === 200){
+                let c = res.data;
+                $('#bnTotal').append(c[0].info_value);
+                $('#bnRecover').append(c[1].info_value);
+                $('#bnDeath').append(c[2].info_value);
+                $('#inTotal').append(c[3].info_value);
+                $('#inRecover').append(c[4].info_value);
+                $('#inDeath').append(c[5].info_value);
+            }else{
+
+            }
+        })
+    }
 
 
     $(document).ready(function(){

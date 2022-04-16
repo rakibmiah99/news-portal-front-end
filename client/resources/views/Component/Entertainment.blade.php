@@ -49,75 +49,76 @@
 </div>
 
 <script>
+    HomeEntertain();
+    function HomeEntertain(){
+        PillsCategory('/category-by-id/6','#EntertainPills','EntertainItem')
 
-    PillsCategory('/category-by-id/6','#EntertainPills','EntertainItem')
+        $('#EntertainPills').on('click','.EntertainItem',function (){
+            $('.EntertainItem').removeClass('disabled')
+            $(this).addClass('disabled')
+            let id = $(this).attr('SubCategoryID');
+            if(id === "0"){
+                EntertainAllNews();
+            }else{
+                getEnterSubNews(`/get-all-news/${id}/sub_lead_news/2/sub`);
+                GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/sub`)
+                GetEnterSecondLead(`/get-all-news/${id}/second_lead/4/sub`);
+                GetEnterSidebarNews(`/get-all-news/${id}/side_bar_news/4/sub`);
+            }
+        })
 
-    $('#EntertainPills').on('click','.EntertainItem',function (){
-        $('.EntertainItem').removeClass('disabled')
-        $(this).addClass('disabled')
-        let id = $(this).attr('SubCategoryID');
-        if(id === "0"){
-            EntertainAllNews();
-        }else{
-            getEnterSubNews(`/get-all-news/${id}/sub_lead_news/2/sub`);
-            GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/sub`)
-            GetEnterSecondLead(`/get-all-news/${id}/second_lead/4/sub`);
-            GetEnterSidebarNews(`/get-all-news/${id}/side_bar_news/4/sub`);
+
+
+
+        EntertainAllNews();
+
+        function EntertainAllNews() {
+            getEnterSubNews('/get-all-news/6/sub_lead_news/2');
+            GetEnterLeadNews('/get-all-news/6/lead_news/5');
+            GetEnterSecondLead('/get-all-news/6/second_lead/4');
+            GetEnterSidebarNews('/get-all-news/6/side_bar_news/4');
         }
-    })
 
 
-
-
-    EntertainAllNews();
-
-    function EntertainAllNews() {
-        getEnterSubNews('/get-all-news/6/sub_lead_news/2');
-        GetEnterLeadNews('/get-all-news/6/lead_news/5');
-        GetEnterSecondLead('/get-all-news/6/second_lead/4');
-        GetEnterSidebarNews('/get-all-news/6/side_bar_news/4');
-    }
-
-
-    function getEnterSubNews(url){
-        GetData(url, function (response){
-            if(response.status === 200){
-                let data = response.data;
-                $('#enterLeftSubLead').empty();
-                $('#enterRightSubLead').empty();
-                for(let i = 0; i < data.length; i++){
-                    if(data[i].order === "1"){
-                        $('#enterLeftSubLead').append(`
+        function getEnterSubNews(url){
+            GetData(url, function (response){
+                if(response.status === 200){
+                    let data = response.data;
+                    $('#enterLeftSubLead').empty();
+                    $('#enterRightSubLead').empty();
+                    for(let i = 0; i < data.length; i++){
+                        if(data[i].order === "1"){
+                            $('#enterLeftSubLead').append(`
                     <img src="${data[i].image}" class="card-img">
                     <div class="card-body">
                         <h5 class="m-0">${data[i].title}</h5>
                     </div>
                    `)
-                    }else if(data[i].order === "2"){
-                        $('#enterRightSubLead').append(`
+                        }else if(data[i].order === "2"){
+                            $('#enterRightSubLead').append(`
                         <img src="${data[i].image}" class="card-img">
                         <div class="card-body">
                             <h5 class="m-0">${data[i].title}</h5>
                         </div>
                    `)
+                        }
                     }
                 }
-            }
-        });
+            });
 
-    }
+        }
 
 
-    function GetEnterLeadNews(url){
-        GetData(url,function (response){
-            if(response.status === 200){
-                let data = response.data;
-                let order = 6;
-                $('#enterFirstLead').empty();
-                $('#enterAnotherLead').empty();
-                for(let i = 0; i < data.length; i++){
-                    if(data[i].order === "1"){
-                        $('#enterFirstLead').append(`
+        function GetEnterLeadNews(url){
+            GetData(url,function (response){
+                if(response.status === 200){
+                    let data = response.data;
+                    let order = 6;
+                    $('#enterFirstLead').empty();
+                    $('#enterAnotherLead').empty();
+                    for(let i = 0; i < data.length; i++){
+                        if(data[i].order === "1"){
+                            $('#enterFirstLead').append(`
                         <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
                             <img class="card-img" style="height: 260px;" " style="object-fit: cover" src="${data[i].image}" >
                             <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
@@ -125,60 +126,60 @@
                             </div>
                         </a>
                     `)
-                    }else{
-                        for(let j = 2; j < order; j++){
-                            if(data[i].order == j){
-                                EnterAnotherLead(data[i].title, data[i].image);
+                        }else{
+                            for(let j = 2; j < order; j++){
+                                if(data[i].order == j){
+                                    EnterAnotherLead(data[i].title, data[i].image);
+                                }
                             }
                         }
                     }
                 }
-            }
-        })
-    }
+            })
+        }
 
 
-    function GetEnterSecondLead(url){
-        GetData(url,function(response){
-            if(response.status === 200 ){
-                let data = response.data;
-                let order = 4;
-                $('#enterSecondLead').empty();
-                for(let i = 0; i < data.length; i++){
-                    for(let j = 1; j < order; j++){
-                        if(data[i].order == j){
-                            EnterSecondLead(data[i].title, data[i].image,data[i].time);
+        function GetEnterSecondLead(url){
+            GetData(url,function(response){
+                if(response.status === 200 ){
+                    let data = response.data;
+                    let order = 4;
+                    $('#enterSecondLead').empty();
+                    for(let i = 0; i < data.length; i++){
+                        for(let j = 1; j < order; j++){
+                            if(data[i].order == j){
+                                EnterSecondLead(data[i].title, data[i].image,data[i].time);
+                            }
                         }
                     }
                 }
-            }
-        })
-    }
+            })
+        }
 
 
-    function GetEnterSidebarNews(url){
-        GetData(url,function(response){
-            if(response.status === 200){
-                let data = response.data;
-                let order = 4;
-                $('#enterRightSubNews').empty();
-                for(let i = 0; i < data.length; i++){
-                    for(let j = 1; j < order; j++){
-                        if(data[i].order == j){
-                            EnterSideSubLeadNews(data[i].title, data[i].image,data[i].time);
+        function GetEnterSidebarNews(url){
+            GetData(url,function(response){
+                if(response.status === 200){
+                    let data = response.data;
+                    let order = 4;
+                    $('#enterRightSubNews').empty();
+                    for(let i = 0; i < data.length; i++){
+                        for(let j = 1; j < order; j++){
+                            if(data[i].order == j){
+                                EnterSideSubLeadNews(data[i].title, data[i].image,data[i].time);
+                            }
                         }
                     }
                 }
-            }
-        })
-    }
+            })
+        }
 
 
 
 
 
-    function EnterAnotherLead(title,image){
-        $('#enterAnotherLead').append(`
+        function EnterAnotherLead(title,image){
+            $('#enterAnotherLead').append(`
             <div class="col-6">
                 <div class="mt-2" style="padding-right: 0">
                     <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
@@ -190,10 +191,10 @@
                 </div>
             </div>
         `)
-    }
+        }
 
-    function EnterSecondLead(title, image, time){
-        $('#enterSecondLead').append(`
+        function EnterSecondLead(title, image, time){
+            $('#enterSecondLead').append(`
             <a href="#" class="news link border-bottom mt-2 mb-2">
                 <img class="image" style="height: 70px;" src="${image}">
                 <div>
@@ -202,10 +203,10 @@
                 </div>
             </a>
         `)
-    }
+        }
 
-    function EnterSideSubLeadNews(title, image, time){
-        $('#enterRightSubNews').append(`
+        function EnterSideSubLeadNews(title, image, time){
+            $('#enterRightSubNews').append(`
             <a href="#" class="news link border-bottom mt-2 mb-2">
                 <img class="image" style="height: 70px;" src="${image}">
                 <div>
@@ -214,5 +215,6 @@
                 </div>
             </a>
         `)
+        }
     }
 </script>

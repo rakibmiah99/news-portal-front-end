@@ -49,6 +49,13 @@
 <body>
 
 
+    <div id="BodyLoader">
+        <div class="loader d-flex flex-column justify-content-center">
+            <img height="60" class="loading-image" src="{{url('img/loading.svg')}}">
+            <img height="30px" src="{{url("img/logo-color.png")}}">
+        </div>
+    </div>
+
 
 
     @include('Layout.sitelead')

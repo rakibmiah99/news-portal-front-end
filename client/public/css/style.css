@@ -63,6 +63,23 @@ body {
     overflow-x: hidden;
 }
 
+
+
+#BodyLoader{
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999!important;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+}
+
+
+
+
 .close-btn{
     border-radius: 50%;
     height:30px;

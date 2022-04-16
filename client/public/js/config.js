@@ -11,8 +11,6 @@ const site = {
     }
 }
 
-
-
 function convertDate(givenDate){
     let date = new Date(givenDate);
     let year = date.getFullYear();
@@ -157,3 +155,43 @@ function ErrorNotFoundData(){
         </div>
     `
 }
+
+function BodyLoaderON(){
+    $('#BodyLoader').css("background-color", "rgba(255,255,255,.90)")
+    $('#BodyLoader').removeClass('d-none')
+}
+function BodyLoaderOFF(){
+    $('#BodyLoader').addClass('d-none')
+}
+
+$(document).ready(function (){
+      BodyLoaderOFF();
+})
+
+
+
+
+
+//
+// const HomeLoad = {
+//     FirstLead: false,
+//     SecondLead: false,
+//     Politics: false,
+//     National: false,
+//     Entertain: false
+// }
+//
+//
+// $(window).scroll(function(){
+//    let top = $(this).scrollTop();
+//    if(top > 100){
+//         if(HomeLoad.Entertain == false){
+//             HomeEntertain()
+//             HomeLoad.Entertain = true;
+//         }
+//    }
+// });
+
+
+
+
