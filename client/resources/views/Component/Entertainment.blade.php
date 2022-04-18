@@ -61,7 +61,7 @@
                 EntertainAllNews();
             }else{
                 getEnterSubNews(`/get-all-news/${id}/sub_lead_news/2/sub`);
-                GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/sub`)
+                GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/sub`);
                 GetEnterSecondLead(`/get-all-news/${id}/second_lead/4/sub`);
                 GetEnterSidebarNews(`/get-all-news/${id}/side_bar_news/4/sub`);
             }
@@ -89,18 +89,22 @@
                     for(let i = 0; i < data.length; i++){
                         if(data[i].order === "1"){
                             $('#enterLeftSubLead').append(`
-                    <img src="${data[i].image}" class="card-img">
-                    <div class="card-body">
-                        <h5 class="m-0">${data[i].title}</h5>
-                    </div>
-                   `)
+                                <a href="/get-news/${data[i].id}" class="link">
+                                    <img src="${data[i].image}" class="card-img">
+                                    <div class="card-body">
+                                        <h5 class="m-0">${data[i].title}</h5>
+                                    </div>
+                                </a>
+                               `)
                         }else if(data[i].order === "2"){
                             $('#enterRightSubLead').append(`
-                        <img src="${data[i].image}" class="card-img">
-                        <div class="card-body">
-                            <h5 class="m-0">${data[i].title}</h5>
-                        </div>
-                   `)
+                                <a href="/get-news/${data[i].id}" class="link">
+                                    <img src="${data[i].image}" class="card-img">
+                                    <div class="card-body">
+                                        <h5 class="m-0">${data[i].title}</h5>
+                                    </div>
+                                </a>
+                           `)
                         }
                     }
                 }
@@ -119,17 +123,17 @@
                     for(let i = 0; i < data.length; i++){
                         if(data[i].order === "1"){
                             $('#enterFirstLead').append(`
-                        <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
-                            <img class="card-img" style="height: 260px;" " style="object-fit: cover" src="${data[i].image}" >
-                            <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
-                                <h4 class="card-title text-white p-2">${data[i].title}</h4>
-                            </div>
-                        </a>
-                    `)
+                                <a href="/get-news/${data[i].id}" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
+                                    <img class="card-img" style="height: 260px;" " style="object-fit: cover" src="${data[i].image}" >
+                                    <div  class="cardOverlay w-100 position-absolute p-2" style="bottom: 0;">
+                                        <h4 class="card-title text-white m-0">${data[i].title}</h4>
+                                    </div>
+                                </a>
+                            `)
                         }else{
                             for(let j = 2; j < order; j++){
                                 if(data[i].order == j){
-                                    EnterAnotherLead(data[i].title, data[i].image);
+                                    EnterAnotherLead(data[i].id,data[i].title, data[i].image);
                                 }
                             }
                         }
@@ -148,7 +152,7 @@
                     for(let i = 0; i < data.length; i++){
                         for(let j = 1; j < order; j++){
                             if(data[i].order == j){
-                                EnterSecondLead(data[i].title, data[i].image,data[i].time);
+                                EnterSecondLead(data[i].id,data[i].title, data[i].image,data[i].time);
                             }
                         }
                     }
@@ -166,7 +170,7 @@
                     for(let i = 0; i < data.length; i++){
                         for(let j = 1; j < order; j++){
                             if(data[i].order == j){
-                                EnterSideSubLeadNews(data[i].title, data[i].image,data[i].time);
+                                EnterSideSubLeadNews(data[i].id,data[i].title, data[i].image,data[i].time);
                             }
                         }
                     }
@@ -178,14 +182,14 @@
 
 
 
-        function EnterAnotherLead(title,image){
+        function EnterAnotherLead(newsID,title,image){
             $('#enterAnotherLead').append(`
             <div class="col-6">
                 <div class="mt-2" style="padding-right: 0">
-                    <a href="#" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
+                    <a href="/get-news/${newsID}" class="link overflow-hidden hover-zoom p-0 card newsCardOverlay position-relative">
                         <img class="card-img" style="object-fit: cover;height: 132px;" src="${image}" >
-                        <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
-                            <h5 class="card-title text-white line-1 p-2">${title}</h5>
+                        <div  class="cardOverlay w-100 position-absolute p-2" style="bottom: 0;">
+                            <h5 class="card-title text-white line-1 m-0">${title}</h5>
                         </div>
                     </a>
                 </div>
@@ -193,9 +197,9 @@
         `)
         }
 
-        function EnterSecondLead(title, image, time){
+        function EnterSecondLead(newsID,title, image, time){
             $('#enterSecondLead').append(`
-            <a href="#" class="news link border-bottom mt-2 mb-2">
+            <a href="/get-news/${newsID}" class="news link border-bottom mt-2 mb-2">
                 <img class="image" style="height: 70px;" src="${image}">
                 <div>
                     <h5 class="title line-2" style="margin-bottom: 5px!important;">${title}</h5>
@@ -205,9 +209,9 @@
         `)
         }
 
-        function EnterSideSubLeadNews(title, image, time){
+        function EnterSideSubLeadNews(newsID,title, image, time){
             $('#enterRightSubNews').append(`
-            <a href="#" class="news link border-bottom mt-2 mb-2">
+            <a href="/get-news/${newsID}" class="news link border-bottom mt-2 mb-2">
                 <img class="image" style="height: 70px;" src="${image}">
                 <div>
                     <h5 class="title line-2" style="margin-bottom: 3px!important;">${title}</h5>

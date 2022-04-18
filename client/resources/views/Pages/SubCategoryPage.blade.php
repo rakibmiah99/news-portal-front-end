@@ -87,9 +87,8 @@
 
     <script>
         let url = MakeUrlFromBrowserUrlSegment();
-        // let isSubCategory = false;
-        // (url.split('/').length == 4) ? isSubCategory = true : false;
         let newsLimit = 20;
+
         GetData(url+"/"+newsLimit, function (response){
             if(response.status === 200){
 
@@ -107,29 +106,36 @@
                         </div>
                     `);
                 }
-
+                BodyLoaderOFF();
             }else{
                 console.log(response)
             }
         })
 
-
-
         function DisplayTopNews(news){
             let DisplayTopNews = $('#DisplayTopNews');
-            DisplayTopNews.append(`
-                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
-                    <a style="padding-left: 0;padding-right: 0;"  href="#"  class="link  d-block card-body">
-                        <img class="w-100" src="${news[0].image}" style="object-fit: cover">
-                        <h2 class="mt-2">${news[0].title}</h2>
-                        <p class="line-3">${news[0].sort_description}</p>
-                    </a>
-                </div>
-            `)
+            for(let i = 0; i < news.length; i++){
+                if(i == 0){
+                    DisplayTopNews.append(`
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                            <a style="padding-left: 0;padding-right: 0;padding-top: 0;"  href="#"  class="link  d-block card-body">
+                                <img class="w-100" src="${news[0].image}" style="object-fit: cover">
+                                <h2 class="mt-2">${news[0].title}</h2>
+                                <p class="line-3">${news[0].sort_description}</p>
+                            </a>
+                        </div>
+                    `)
+                }
+                else if (i == 1){
+                    DisplayTopNews.append(`
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                            <div class="row" id="CategorySideNews">
 
-            DisplayTopNews.append(`
-                <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-                    <div class="row">
+                            </div>
+                        </div>
+                    `)
+
+                    $('#CategorySideNews').append(`
                         <div class="col-12 col-sm-6 col-md-6 col-lg-12">
                             <a href="#" class="card border-0 p-2 d-block pt-0 pb-0 link" >
                                 <img src="${news[1].image}" class="card-img w-100"></img>
@@ -138,7 +144,12 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-12">
+                    `)
+                }
+
+                else if( i == 2){
+                    $('#CategorySideNews').append(`
+                         <div class="col-12 col-sm-6 col-md-6 col-lg-12">
                             <a  href="#" class="card border-0 d-block p-2 pt-0 pb-0 link">
                                 <img src="${news[2].image}" class="card-img"></img>
                                 <div class="card-body plr-0">
@@ -146,9 +157,9 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
-                </div>
-            `)
+                    `)
+                }
+            }
         }
 
 

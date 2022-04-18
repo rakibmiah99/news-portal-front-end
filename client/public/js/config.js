@@ -41,12 +41,12 @@ function MakeObjectFromBrowserUrlParams(){
     let obj = {};
     let fullUrl = window.location.href.split('?');
     let params = fullUrl[1].split('&');
-
     params.forEach(function (paramsItem){
         var key = paramsItem.split('=')[0];
         var value = paramsItem.split('=')[1];
-        obj[key] = value;
+        obj[key] = decodeURIComponent(value);
     })
+    // debugger;
     return obj;
 }
 
@@ -165,7 +165,7 @@ function BodyLoaderOFF(){
 }
 
 $(document).ready(function (){
-      BodyLoaderOFF();
+      // BodyLoaderOFF();
 })
 
 

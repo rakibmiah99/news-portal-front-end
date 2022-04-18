@@ -53,7 +53,7 @@
 
                     for(let j = 0;j < order; j++){
                         if(data[i].order == j+1){
-                            SecondLead(data[i].title, data[i].image, data[i].date);
+                            SecondLead(data[i].id,data[i].title, data[i].image, data[i].date);
                         }
                     }
                 }
@@ -62,10 +62,10 @@
                 console.log(response)
             }
 
-            function SecondLead(title,image,time){
+            function SecondLead(newsID,title,image,time){
                 $('#secondLeadNews').append(`
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 p-2">
-                    <a href="#" class="card link overflow-hidden w-100" style="width: 18rem;">
+                    <a href="/get-news/${newsID}" class="card link overflow-hidden w-100" style="width: 18rem;">
                         <img src="${image}" class="card-img-top img-fluid" alt="Tittle">
                         <div class="card-body">
                             <p class="card-text f-18">${title}</p>
@@ -89,7 +89,7 @@
                         if(data[i].order == j+1){
                             //console.log(j+1)
                             $('#SorbosesNews').append(`
-                            <a href="#" class="news p-0 link border-bottom mt-2 mb-2">
+                            <a href="/get-news/${data[i].id}" class="news p-0 link border-bottom mt-2 mb-2">
                                 <img class="image" src="${data[i].image}">
                                 <div>
                                     <h5 class="title line-2" style="margin-bottom: 5px!important;">${data[i].title}</h5>
@@ -109,7 +109,7 @@
                 let data = response.data;
                 for(let i = 0; i < data.length; i++){
                     $('#SorbadikNews').append(`
-                    <a href="#" class="news p-0 link border-bottom mt-2 mb-2">
+                    <a href="/get-news/${data[i].id}" class="news p-0 link border-bottom mt-2 mb-2">
                         <img class="image" src="${data[i].image}">
                         <div>
                             <h5 class="title line-2" style="margin-bottom: 5px!important;">${data[i].title}</h5>

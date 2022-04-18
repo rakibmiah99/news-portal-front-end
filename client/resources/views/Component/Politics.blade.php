@@ -233,6 +233,7 @@
             GetData('/get-all-news/2/side_bar_news/7',function (response){
                 if(response.status === 200){
                     politicsSideNews.empty();
+                    BodyLoaderOFF();
                     let data = response.data;
                     if(data.length > 0){
                         let order = 7;

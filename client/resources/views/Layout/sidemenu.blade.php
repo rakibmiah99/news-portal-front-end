@@ -20,22 +20,26 @@
 
                 for(let i  = 0; i < data.length; i++){
                     var category = data[i];
+                    if(category.id == "1"){
+                        ul += `<a href="/" class="list-group-item list-group-item-action">${category.name}</a>`;
+                    }else{
+                        if(category.visible == 1){
+                            if(category.sub_categories.length > 0){
+                                ul += `<a href="/get-news-by-category/${category.id}" class="list-group-item list-group-item-action">${category.name}</a>`;
 
-                    if(category.visible == 1){
-                        if(category.sub_categories.length > 0){
-                            ul += `<a href="#" class="list-group-item list-group-item-action">${category.name}</a>`;
 
-
-                            for(let j = 0; j < category.sub_categories.length; j++ ){
-                                var sub = category.sub_categories[j];
-                                if(sub.visible == 1){
-                                    ul += `<a href="#" class="list-group-item list-group-item-action">${sub.name}</a>`;
+                                for(let j = 0; j < category.sub_categories.length; j++ ){
+                                    var sub = category.sub_categories[j];
+                                    if(sub.visible == 1){
+                                        ul += `<a href="/get-news-by-sub-category/${sub.id}" class="list-group-item list-group-item-action">${sub.name}</a>`;
+                                    }
                                 }
+                            }else{
+                                ul += `<a href="/get-news-by-category/${category.id}" class="list-group-item list-group-item-action">${category.name}</a>`;
                             }
-                        }else{
-                            ul += `<a href="#" class="list-group-item list-group-item-action">${category.name}</a>`;
                         }
                     }
+
                 }
                 ul += "</ul>";
 

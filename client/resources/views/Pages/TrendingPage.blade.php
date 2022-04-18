@@ -36,26 +36,9 @@
                         </a>
                     `)
                 })
-
+                BodyLoaderOFF();
             }
         })
-
-
-
-
-
-
-
-
-        /*
-        for(let i =0; i < 20;i++){
-            GetData('/get-all-news/3/side_bar_news/6', function (res){
-                console.log(res)
-            });
-        }
-
-         */
-
 
     </script>
 

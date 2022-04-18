@@ -12,15 +12,15 @@
     @include('Component.Politics')
     @include('Component.National')
     @include('Component.sports')
-{{--    @include('Component.AdvertiseModal')--}}
-{{--    @include('Component.AdvertiseBottomFixed')--}}
-{{--    @include('Component.International')--}}
-{{--    @include('Component.Entertainment')--}}
-{{--    @include('Component.SampleComonent1')--}}
-{{--    @include('Component.SampleComponent2')--}}
-{{--    @include('Component.SampleComponent3')--}}
-{{--    @include('Component.Feature')--}}
-{{--    @include('Component.Video')--}}
-{{--    @include('Component.ImageGallery')--}}
+    @include('Component.AdvertiseModal')
+    @include('Component.AdvertiseBottomFixed')
+    @include('Component.International')
+    @include('Component.Entertainment')
+    @include('Component.SampleComonent1')
+    @include('Component.SampleComponent2')
+    @include('Component.SampleComponent3')
+    @include('Component.Feature')
+    @include('Component.Video')
+    @include('Component.ImageGallery')
 
 @endsection

@@ -349,6 +349,7 @@ body {
 
 /*Online Voting*/
 .vote-section{
+    padding: 15px;
     position: relative;
     display: flex!important;
     justify-content: center!important;

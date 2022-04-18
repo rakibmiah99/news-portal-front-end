@@ -159,6 +159,8 @@
 
                         $('#archiveLoadMore').remove();
                     }
+
+                    BodyLoaderOFF();
                 }
             })
         }
@@ -184,6 +186,8 @@
                         </div>
                     `);
                     })
+
+                    BodyLoaderOFF();
                 }
             });
         }

@@ -101,7 +101,7 @@
                             for(let i = 0; i < data.length; i++){
                                 for(let j = 0; j < order; j++){
                                     if(data[i].order == j){
-                                        NationalLead(data[i].title, data[i].image);
+                                        NationalLead(data[i].id,data[i].title, data[i].image);
                                     }
                                 }
                             }
@@ -122,7 +122,7 @@
                             for(let i = 0; i < data.length; i++){
                                 for(let j = 0; j < order; j++){
                                     if(data[i].order == j+1){
-                                        NationalSideNews(data[i].title,data[i].date);
+                                        NationalSideNews(data[i].id,data[i].title,data[i].date);
                                     }
                                 }
                             }
@@ -145,7 +145,7 @@
 
                     for(let j = 0; j < order; j++){
                         if(data[i].order == j){
-                            NationalLead(data[i].title, data[i].image);
+                            NationalLead(data[i].id,data[i].title, data[i].image);
                         }
                     }
                 }
@@ -161,7 +161,7 @@
 
                     for(let j = 0; j < order; j++){
                         if(data[i].order == j){
-                            NationalSideNews(data[i].title,data[i].date);
+                            NationalSideNews(data[i].id,data[i].title,data[i].date);
                         }
                     }
                 }
@@ -172,22 +172,22 @@
 
 
         //functions
-        function NationalLead(title,image){
+        function NationalLead(newsID, title,image){
             $('#nationalLeadNews').append(`
-            <div class="mt-3 col-12 col-sm-6  col-md-6  col-lg-6  border-0" style="padding-right: 0">
-               <a  href="#" class="link p-0 card newsCardOverlay position-relative">
+            <div class="mt-3  col-12 col-sm-6  col-md-6   col-lg-6  border-0" style="padding-right: 0">
+               <a  href="/get-news/${newsID}" class="link p-0 card newsCardOverlay position-relative">
                    <img height="220px" style="object-fit: cover" src="${image}" >
-                   <div  class="cardOverlay w-100 position-absolute" style="bottom: 0;">
-                       <h5 class="card-title text-white line-1 p-2">${title}</h5>
+                   <div  class="cardOverlay w-100 position-absolute p-2 " style="bottom: 0;">
+                       <h5 class="card-title text-white line-1 m-0">${title}</h5>
                    </div>
                </a>
             </div>
         `)
         }
 
-        function NationalSideNews(title,date){
+        function NationalSideNews(newsID,title,date){
             $('#nationlsideNews').append(`
-            <a href="#" class="news col-12 col-sm-6 p-2 pb-3  col-md-6 col-lg-12 link border-bottom">
+            <a href="/get-news/${newsID}" class="news col-12 col-sm-6 p-2 pb-3  col-md-6 col-lg-12 link border-bottom">
                 <div>
                     <h5 style="margin-bottom: 6px!important;" class="title line-1">${title}</h5>
                     <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(date)}</div>
@@ -209,7 +209,7 @@
 
                         for(let j = 0; j < order; j++){
                             if(data[i].order == j){
-                                NationalLead(data[i].title, data[i].image);
+                                NationalLead(data[i].id,data[i].title, data[i].image);
                             }
                         }
                     }
@@ -220,13 +220,14 @@
             GetData('/get-all-news/3/side_bar_news/6', function(response){
                 if(response.status === 200){
                     SideNews.empty();
+                    BodyLoaderOFF();
                     let data = response.data;
                     let order = 7;
                     for(let i = 0; i < data.length; i++){
 
                         for(let j = 0; j < order; j++){
                             if(data[i].order == j){
-                                NationalSideNews(data[i].title,data[i].date);
+                                NationalSideNews(data[i].id,data[i].title,data[i].date);
                             }
                         }
                     }

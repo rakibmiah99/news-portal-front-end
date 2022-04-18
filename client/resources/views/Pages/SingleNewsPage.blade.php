@@ -14,6 +14,9 @@
                 <div id="news">
 
                 </div>
+                <div id="scrollMountDiv">
+
+                </div>
             </div>
 
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3">
@@ -69,13 +72,22 @@
             </div>
         </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js" integrity="sha512-vYYoQJKYzaJQaOaYxaJhhmxikOJ2SEgHwmCNa0EMP0aRr7opdt4HHrorAwnCyPm8bdW/JBApIomo85YaBX81zA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         let getUrl = MakeUrlFromBrowserUrlSegment()
         GetData(getUrl, function (response){
             if(response.status === 200){
                 let news = response.data;
-                $('#news').append(`
+                News(news);
+                BodyLoaderOFF();
+
+            }else{
+                console.log(response)
+            }
+        })
+
+        function News(news){
+            $('#news').append(`
                     <div class="news-item">
                         <h5 class="news-ticker">${news.ticker}</h5৫>
                         <h1 class="news-title">${news.title}</h1>
@@ -117,10 +129,45 @@
                         <div class="f-18 news-description">${news.details}</div>
                     </div>
                 `)
-            }else{
-                console.log(response)
+        }
+
+
+
+        ///////////////////////////////////////////
+
+        var big = 300;
+        var item = [];
+        $(window).on("scroll", function() {
+            //var scrollHeight = $(window).scrollTop();
+
+            if(window.scrollY){
+                if((big + 200) < window.scrollY){
+                   big = window.scrollY;
+                    //item.push(big);
+                   //window.history.replace(big)
+                   item.push(big);
+                };
             }
+
+
+
+            item.forEach(function (list){
+                if(list === window.scrollY){
+                    console.log(list)
+                }
+            })
+
+            //console.log(item)
+
+
         })
+
+
+
+
+
+
+
     </script>
 
 @endsection

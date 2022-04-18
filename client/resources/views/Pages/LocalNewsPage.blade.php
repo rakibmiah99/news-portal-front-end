@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-9">
                 <h5 id="DivisionName">বরিশাল</h5>
-                <h2 id="DistrictName">মেহেন্দীগঞ্জ</h2>
+                <h2 id="DistrictName"></h2>
                 <hr style="background: #D8D8D8">
                 <ul class="keyword-link2" id="UpozelaList">
                    <!-- Upozila List -->
@@ -54,7 +54,7 @@
                 let data = response.data;
                 if(data.length > 0){
                     data.forEach(function (item){
-                        LocalNewsItem(item.title,item.image,item.date,item.sort_description)
+                        LocalNewsItem(item.id,item.title,item.image,item.date,item.sort_description)
                     })
                 }else{
                     $('#LocalNewsContent').append(`
@@ -63,7 +63,7 @@
                           </div>
                     `)
                 }
-
+                BodyLoaderOFF();
             }
         })
 
@@ -119,9 +119,9 @@
         });
 
 
-        function LocalNewsItem(title,image,date,shorDesc){
+        function LocalNewsItem(newsID,title,image,date,shorDesc){
             $('#LocalNewsContent').append(`
-                 <div class="LocalNewsContent mt-2 mb-2 d-flex justify-content-between pt-2 pb-2">
+                 <a href="/get-news/${newsID}" class="LocalNewsContent link mt-2 mb-2 d-flex justify-content-between pt-2 pb-2">
                     <div class="ContentText">
                         <h2>${title}</h2>
                         <p>${site.localeFullDate(date)}</p>
@@ -130,7 +130,7 @@
                     <div class="ContentImage" style="margin-left: 15px;">
                         <img style="height: 150px;width: 250px;object-fit: cover;" src="${image}">
                     </div>
-                </div>
+                </a>
             `)
         }
 
