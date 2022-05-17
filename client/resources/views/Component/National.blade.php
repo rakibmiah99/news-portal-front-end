@@ -92,7 +92,7 @@
             if(id === "0"){
                 AllNationalNews();
             }else{
-                GetData(`/get-all-news/${id}/lead_news/4/sub`, function (response){
+                GetData(`/get-all-news/${id}/lead_news/4/0/sub`, function (response){
                     if(response.status === 200){
                         LeadNews.empty();
                         let data = response.data;
@@ -113,7 +113,7 @@
                 });
 
                 //Side News
-                GetData(`/get-all-news/${id}/side_bar_news/6/sub`,function (response){
+                GetData(`/get-all-news/${id}/side_bar_news/6/0/sub`,function (response){
                     if(response.status === 200){
                         SideNews.empty();
                         let data = response.data;
@@ -137,7 +137,7 @@
 
 
 
-        GetData('/get-all-news/3/lead_news/4', function(response){
+        GetData('/get-all-news/3/lead_news/4/0', function(response){
             if(response.status === 200){
                 let data = response.data;
                 let order = 5;
@@ -153,7 +153,7 @@
         })
 
 
-        GetData('/get-all-news/3/side_bar_news/6', function(response){
+        GetData('/get-all-news/3/side_bar_news/6/0', function(response){
             if(response.status === 200){
                 let data = response.data;
                 let order = 7;
@@ -200,7 +200,7 @@
         function AllNationalNews(){
             let LeadNews = $('#nationalLeadNews');
             let SideNews = $('#nationlsideNews');
-            GetData('/get-all-news/3/lead_news/4', function(response){
+            GetData('/get-all-news/3/lead_news/4/0', function(response){
                 if(response.status === 200){
                     LeadNews.empty();
                     let data = response.data;
@@ -217,7 +217,7 @@
             })
 
 
-            GetData('/get-all-news/3/side_bar_news/6', function(response){
+            GetData('/get-all-news/3/side_bar_news/6/0', function(response){
                 if(response.status === 200){
                     SideNews.empty();
                     BodyLoaderOFF();

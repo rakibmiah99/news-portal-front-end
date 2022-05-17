@@ -22,16 +22,17 @@
         GetData(url+"/"+20, function (response){
             if(response.status === 200){
                 let data = response.data;
+                // d-flex justify-content-between style="height: 150px;width: 250px;object-fit: cover;"
                 data.forEach(function (item){
                     $('#TrendingItems').append(`
-                        <a href="/get-news/${item.id}" class="TrendingContent mt-2 link mb-2 d-flex justify-content-between pt-2 pb-2">
-                            <div class="ContentText">
+                        <a href="/get-news/${item.id}" class="TrendingContent row mt-2 link mb-2  pt-2 pb-2">
+                            <div class="ContentText col-7 col-md-8 col-xl-9">
                                 <h2>${item.title}</h2>
                                 <p>${site.localeFullDate(item.date)}</p>
-                                <p class="line-2">${item.sort_description}</p>
+                                <p class="line-2 d-none d-md-block">${item.sort_description}</p>
                             </div>
-                            <div class="ContentImage" style="margin-left: 15px;">
-                                <img style="height: 150px;width: 250px;object-fit: cover;" src="${item.image}">
+                            <div class="ContentImage col-5 col-md-4 col-xl-3" style="/*margin-left: 15px;*/">
+                                <img  class="img-fluid" src="${item.image}">
                             </div>
                         </a>
                     `)

@@ -147,20 +147,21 @@
         /*---  Health Section --------*/
         PillsCategory('/category-by-id/12','#HealthPills','HealthItem')
         $('#HealthPills').on('click','.HealthItem',function (){
+            BodyLoaderON();
             $('.HealthItem').removeClass('disabled')
             $(this).addClass('disabled')
             let id = $(this).attr('SubCategoryID');
             if(id === "0"){
                 AllHealthNews();
             }else{
-                GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#HealthLeadNews');
-                GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#HealthSubNews')
+                GetComponentNews(`/get-all-news/${id}/lead_news/1/0/sub`,'#HealthLeadNews');
+                GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/0/sub`,'#HealthSubNews')
             }
         })
         AllHealthNews();
         function AllHealthNews(){
-            GetComponentNews('/get-all-news/12/lead_news/1','#HealthLeadNews');
-            GetComponentSubNews('/get-all-news/12/side_bar_news/2','#HealthSubNews');
+            GetComponentNews('/get-all-news/12/lead_news/1/0','#HealthLeadNews');
+            GetComponentSubNews('/get-all-news/12/side_bar_news/2/0','#HealthSubNews');
         }
         /*---------- END Health Section ------------*/
 
@@ -168,20 +169,21 @@
         /*---  Jobs Section --------*/
         PillsCategory('/category-by-id/12','#JobsPills','JobsItem')
         $('#JobsPills').on('click','.JobsItem',function (){
+            BodyLoaderON();
             $('.JobsItem').removeClass('disabled')
             $(this).addClass('disabled')
             let id = $(this).attr('SubCategoryID');
             if(id === "0"){
                 AllJobsNews();
             }else{
-                GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#JobsLeadNews');
-                GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#JobsSubNews')
+                GetComponentNews(`/get-all-news/${id}/lead_news/1/0/sub`,'#JobsLeadNews');
+                GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/0/sub`,'#JobsSubNews')
             }
         })
         AllJobsNews();
         function AllJobsNews(){
-            GetComponentNews('/get-all-news/12/lead_news/1','#JobsLeadNews');
-            GetComponentSubNews('/get-all-news/12/side_bar_news/2','#JobsSubNews');
+            GetComponentNews('/get-all-news/12/lead_news/1/0','#JobsLeadNews');
+            GetComponentSubNews('/get-all-news/12/side_bar_news/2/0','#JobsSubNews');
         }
         /*---------- END Jobs Section ------------*/
 

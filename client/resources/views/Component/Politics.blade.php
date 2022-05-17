@@ -53,12 +53,14 @@
 
 
 {{--ADVERTISE SECTION--}}
-<div class="addBanner mt-5 mb-5 d-flex justify-content-center">
-    <img src="{{asset("img/bigBanner.png")}}">
+<div id="home_middle_big_add" class="addBanner mt-5 mb-5 d-flex justify-content-center">
+
 </div>
 
 
 <script>
+
+    Advertise('/advertise/home_middle_big_add',$('#home_middle_big_add'))
 
     HomePolitics()
 
@@ -75,7 +77,7 @@
             if(id === "0"){
                 AllPoliticsNews();
             }else{
-                GetData(`/get-all-news/${id}/lead_news/4/sub`, function (response){
+                GetData(`/get-all-news/${id}/lead_news/4/0/sub`, function (response){
                     if(response.status === 200){
                         politicsLeadNews.empty();
                         let data = response.data;
@@ -84,7 +86,7 @@
                             for(let i = 0; i < data.length; i++){
                                 for(let j = 0; j < order; j++){
                                     if(data[i].order == j){
-                                        PoliticsLeadNews(data[i].title, data[i].sort_description , data[i].image, data[i].date);
+                                        PoliticsLeadNews(data[i].id,data[i].title, data[i].sort_description , data[i].image, data[i].date);
                                     }
                                 }
                             }
@@ -95,7 +97,7 @@
                 });
 
                 //Side News
-                GetData(`/get-all-news/${id}/side_bar_news/7/sub`,function (response){
+                GetData(`/get-all-news/${id}/side_bar_news/7/0/sub`,function (response){
                     if(response.status === 200){
                         BodyLoaderOFF();
                         politicsSideNews.empty();
@@ -105,7 +107,7 @@
                             for(let i = 0; i < data.length; i++){
                                 for(let j = 0; j < order; j++){
                                     if(data[i].order == j+1){
-                                        PoliticsSideNews(data[i].title, data[i].image, data[i].date);
+                                        PoliticsSideNews(data[i].id,data[i].title, data[i].image, data[i].date);
                                     }
                                 }
                             }
@@ -176,10 +178,10 @@
 
 
         //functions
-        function PoliticsLeadNews(title, subTitle, image, time){
+        function PoliticsLeadNews(newsID,title, subTitle, image, time){
             $('#politicsLeadNews').append(`
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                <a href="#" class="card mt-3 w-100 link" style="height: 310px;">
+                <a href="/get-news/${newsID}" class="card mt-3 w-100 link" style="height: 310px;">
                     <img height="150px" style="object-fit: cover" src="${image}" height="180px" class="card-img-top" alt="${title}">
                     <div class="card-body">
                         <h5 style="margin-bottom: 5px;" class="card-text fw-bold line-1">${title}</h5>
@@ -194,9 +196,9 @@
         `)
         }
 
-        function PoliticsSideNews(title,image,time){
+        function PoliticsSideNews(newsID,title,image,time){
             $('#politicsSideNews').append(`
-                <a href="#" class="news link border-bottom mt-0 mb-0">
+                <a href="/get-news/${newsID}" class="news link border-bottom mt-0 mb-0">
                     <img class="image" src="${image}">
                     <div>
                         <h5  class="title line-2" style="margin-bottom: 1px!important;">${title}</h5>
@@ -210,7 +212,7 @@
         function AllPoliticsNews(){
             let politicsLeadNews = $('#politicsLeadNews');
             let politicsSideNews = $('#politicsSideNews');
-            GetData('/get-all-news/2/lead_news/4',function (response){
+            GetData('/get-all-news/2/lead_news/4/0',function (response){
                 if(response.status === 200){
                     politicsLeadNews.empty();
                     let data = response.data;
@@ -219,7 +221,7 @@
                         for(let i = 0; i < data.length; i++){
                             for(let j = 0; j < order; j++){
                                 if(data[i].order == j){
-                                    PoliticsLeadNews(data[i].title, data[i].sort_description , data[i].image, data[i].date);
+                                    PoliticsLeadNews(data[i].id,data[i].title, data[i].sort_description , data[i].image, data[i].date);
                                 }
                             }
                         }
@@ -230,7 +232,7 @@
             })
 
             //Side News
-            GetData('/get-all-news/2/side_bar_news/7',function (response){
+            GetData('/get-all-news/2/side_bar_news/7/0',function (response){
                 if(response.status === 200){
                     politicsSideNews.empty();
                     BodyLoaderOFF();
@@ -240,7 +242,7 @@
                         for(let i = 0; i < data.length; i++){
                             for(let j = 0; j < order; j++){
                                 if(data[i].order == j+1){
-                                    PoliticsSideNews(data[i].title, data[i].image, data[i].date);
+                                    PoliticsSideNews(data[i].id,data[i].title, data[i].image, data[i].date);
                                 }
                             }
                         }

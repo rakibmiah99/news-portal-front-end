@@ -4,7 +4,7 @@
 @section('content')
     <div id="LocalNews" class="mt-3 section-container">
         <div class="row">
-            <div class="col-9">
+            <div class="col-12 col-md-9">
                 <h5 id="DivisionName">বরিশাল</h5>
                 <h2 id="DistrictName"></h2>
                 <hr style="background: #D8D8D8">
@@ -17,7 +17,7 @@
 
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-md-3">
                 <!--               Advertise   --->
                 <div class="advertise mt-0 mb-1 text-center overflow-hidden">
                     <img height="250px"  src="{{asset('img/300x300.gif')}}">
@@ -43,12 +43,15 @@
     </div>
 
     <script>
+
+        Advertise('/advertise/home_lead_left_add', $('#home_lead_left'))
+
+
         let urlData = MakeObjectFromBrowserUrlParams();
         let makeUrl = "/" + urlData.division;
         if(urlData.district != ""){makeUrl += "/" + urlData.district}
         if(urlData.upozela != ""){makeUrl += "/" + urlData.upozela}
 
-        console.log(makeUrl);
         GetData('/get-filter-news'+makeUrl, function (response){
             if(response.status === 200){
                 let data = response.data;
@@ -121,20 +124,18 @@
 
         function LocalNewsItem(newsID,title,image,date,shorDesc){
             $('#LocalNewsContent').append(`
-                 <a href="/get-news/${newsID}" class="LocalNewsContent link mt-2 mb-2 d-flex justify-content-between pt-2 pb-2">
-                    <div class="ContentText">
+                 <a href="/get-news/${newsID}" class="TrendingContent row mt-2 link mb-2  pt-2 pb-2">
+                    <div class="ContentText col-7 col-md-8 col-xl-9">
                         <h2>${title}</h2>
                         <p>${site.localeFullDate(date)}</p>
-                        <p class="line-2">${shorDesc}</p>
+                        <p class="line-2 d-none d-md-block">${shorDesc}</p>
                     </div>
-                    <div class="ContentImage" style="margin-left: 15px;">
-                        <img style="height: 150px;width: 250px;object-fit: cover;" src="${image}">
+                    <div class="ContentImage col-5 col-md-4 col-xl-3">
+                        <img  class="img-fluid" src="${image}">
                     </div>
                 </a>
             `)
         }
-
-
 
 
         //Get Division, District, And Upajela and set to form

@@ -26,8 +26,8 @@
             </div>
 
             {{--                Advertise--}}
-            <div class="advertise mt-5 mb-3 text-center overflow-hidden">
-                <img  src="{{asset('img/300x300.gif')}}">
+            <div id="home_second_lead_left" class="advertise mt-5 mb-3 text-center overflow-hidden">
+
             </div>
         </div>
 
@@ -42,10 +42,34 @@
 <script>
 
 
+    GetData('/get-all-live-news/1/0', function (response){
+        if(response.status === 200){
+            let data = response.data;
+            if(data.length > 0){
+                $('#SorbosesNews').append(`
+                    <a href="/get-live-news/${data[0].id}" class="news p-0 link border-bottom mt-2 mb-2">
+                        <div class="position-relative">
+                            <img style="height: 65px;" class="image" src="${data[0].image}">
+                            <div class="position-absolute text-center text-white " style="height: 20px;width: 90%;background: rgba(255,255,255,1);bottom: 0">
+
+                                <img src="https://www.pngall.com/wp-content/uploads/2018/03/Live-PNG-File.png" height="20px">
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="title line-2" style="margin-bottom: 0px!important;">${data[0].title}</h5>
+                            <p class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(data[0].date)}</p>
+                        </div>
+                    </a>
+                `)}
+        }
+    })
+
     HomeSecondLead();
 
+    Advertise('/advertise/home_second_lead_left_add',$('#home_second_lead_left'))
+
     function HomeSecondLead(){
-        GetData('/get-all-news/1/second_lead/9', function(response){
+        GetData('/get-all-news/1/second_lead/9/0', function(response){
             if(response.status === 200){
                 let data = response.data;
                 let order = 9;
@@ -80,7 +104,9 @@
             }
         })
 
-        GetData('/get-all-news/18/general/12', function (response){
+
+
+        GetData('/get-all-latest/12/0', function (response){
             if(response.status === 200){
                 let data = response.data;
                 let order = 12;
@@ -90,7 +116,7 @@
                             //console.log(j+1)
                             $('#SorbosesNews').append(`
                             <a href="/get-news/${data[i].id}" class="news p-0 link border-bottom mt-2 mb-2">
-                                <img class="image" src="${data[i].image}">
+                                <img  style="height: 65px;" class="image" src="${data[i].image}">
                                 <div>
                                     <h5 class="title line-2" style="margin-bottom: 5px!important;">${data[i].title}</h5>
                                     <p class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(data[i].datae)}</p>
@@ -104,13 +130,15 @@
         });
 
 
+
+
         GetData('/get-all-sorbadhik/12', function (response){
             if(response.status === 200){
                 let data = response.data;
                 for(let i = 0; i < data.length; i++){
                     $('#SorbadikNews').append(`
                     <a href="/get-news/${data[i].id}" class="news p-0 link border-bottom mt-2 mb-2">
-                        <img class="image" src="${data[i].image}">
+                        <img style="height: 65px;" class="image" src="${data[i].image}">
                         <div>
                             <h5 class="title line-2" style="margin-bottom: 5px!important;">${data[i].title}</h5>
                             <p class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(data[i].datae)}</p>
@@ -118,7 +146,6 @@
                     </a>
                 `);
                 }
-
                 BodyLoaderOFF();
             }
         });

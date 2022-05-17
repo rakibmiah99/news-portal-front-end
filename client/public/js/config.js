@@ -1,4 +1,5 @@
 const site = {
+    front_site_url : "http://127.0.0.1:8000",
     base_url: "http://nikash-online.com/public/api",
     url: function (getUrl){
         return this.base_url+getUrl;
@@ -140,9 +141,39 @@ function GetComponentSubNews(url,element){
                             </a>
                         `)
             }
+            BodyLoaderOFF();
         }
     });
 }
+
+
+
+
+function Advertise(url,placement){
+    GetData(url,function (res){
+        if(res.status === 200){
+            let data = res.data;
+            if(data.content === null || data.content === ""){
+                placement.append(`
+                      <img  src="${data.image}">
+                `)
+            }else{
+                placement.append(data.content)
+            }
+        }
+    });
+}
+
+function CMS(url){
+    GetData(url, function (res){
+        if(res.status === 200){
+            $('#cms').append(res.data.content)
+            BodyLoaderOFF();
+        }
+    })
+}
+
+
 
 
 

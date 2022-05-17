@@ -54,16 +54,17 @@
         PillsCategory('/category-by-id/6','#EntertainPills','EntertainItem')
 
         $('#EntertainPills').on('click','.EntertainItem',function (){
+            BodyLoaderON();
             $('.EntertainItem').removeClass('disabled')
             $(this).addClass('disabled')
             let id = $(this).attr('SubCategoryID');
             if(id === "0"){
                 EntertainAllNews();
             }else{
-                getEnterSubNews(`/get-all-news/${id}/sub_lead_news/2/sub`);
-                GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/sub`);
-                GetEnterSecondLead(`/get-all-news/${id}/second_lead/4/sub`);
-                GetEnterSidebarNews(`/get-all-news/${id}/side_bar_news/4/sub`);
+                getEnterSubNews(`/get-all-news/${id}/sub_lead_news/2/0/sub`);
+                GetEnterLeadNews(`/get-all-news/${id}/lead_news/5/0/sub`);
+                GetEnterSecondLead(`/get-all-news/${id}/second_lead/4/0/sub`);
+                GetEnterSidebarNews(`/get-all-news/${id}/side_bar_news/4/0/sub`);
             }
         })
 
@@ -73,10 +74,10 @@
         EntertainAllNews();
 
         function EntertainAllNews() {
-            getEnterSubNews('/get-all-news/6/sub_lead_news/2');
-            GetEnterLeadNews('/get-all-news/6/lead_news/5');
-            GetEnterSecondLead('/get-all-news/6/second_lead/4');
-            GetEnterSidebarNews('/get-all-news/6/side_bar_news/4');
+            getEnterSubNews('/get-all-news/6/sub_lead_news/2/0');
+            GetEnterLeadNews('/get-all-news/6/lead_news/5/0');
+            GetEnterSecondLead('/get-all-news/6/second_lead/4/0');
+            GetEnterSidebarNews('/get-all-news/6/side_bar_news/4/0');
         }
 
 
@@ -174,6 +175,7 @@
                             }
                         }
                     }
+                    BodyLoaderOFF();
                 }
             })
         }

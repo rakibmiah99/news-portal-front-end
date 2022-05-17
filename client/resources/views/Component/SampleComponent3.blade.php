@@ -105,20 +105,21 @@
     /*---  LifeStyle Section --------*/
     PillsCategory('/category-by-id/13','#LifeStylePills','LifeStyleItem')
     $('#LifeStylePills').on('click','.LifeStyleItem',function (){
+        BodyLoaderON();
         $('.LifeStyleItem').removeClass('disabled')
         $(this).addClass('disabled')
         let id = $(this).attr('SubCategoryID');
         if(id === "0"){
             AllLifeStyleNews();
         }else{
-            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#LifeStyleLeadNews');
-            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#LifeStyleSubNews')
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/0/sub`,'#LifeStyleLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/0/sub`,'#LifeStyleSubNews')
         }
     })
     AllLifeStyleNews();
     function AllLifeStyleNews(){
-        GetComponentNews('/get-all-news/13/lead_news/1','#LifeStyleLeadNews');
-        GetComponentSubNews('/get-all-news/13/side_bar_news/2','#LifeStyleSubNews');
+        GetComponentNews('/get-all-news/13/lead_news/1/0','#LifeStyleLeadNews');
+        GetComponentSubNews('/get-all-news/13/side_bar_news/2/0','#LifeStyleSubNews');
     }
     /*---------- END Lify Style Section ------------*/
 
@@ -126,60 +127,63 @@
     /*---  Technology Section --------*/
     PillsCategory('/category-by-id/15','#TechnologyPills','TechnologyItem')
     $('#TechnologyPills').on('click','.TechnologyItem',function (){
+        BodyLoaderON();
         $('.TechnologyItem').removeClass('disabled')
         $(this).addClass('disabled')
         let id = $(this).attr('SubCategoryID');
         if(id === "0"){
             AllTechnologyNews();
         }else{
-            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#TechnologyLeadNews');
-            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#TechnologySubNews')
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/0/sub`,'#TechnologyLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/0/sub`,'#TechnologySubNews')
         }
     })
     AllTechnologyNews();
     function AllTechnologyNews(){
-        GetComponentNews('/get-all-news/15/lead_news/1','#TechnologyLeadNews');
-        GetComponentSubNews('/get-all-news/15/side_bar_news/2','#TechnologySubNews');
+        GetComponentNews('/get-all-news/15/lead_news/1/0','#TechnologyLeadNews');
+        GetComponentSubNews('/get-all-news/15/side_bar_news/2/0','#TechnologySubNews');
     }
     /*---------- END Jobs Section ------------*/
 
     /*---  Rigion Section --------*/
     PillsCategory('/category-by-id/16','#RigionPills','RigionItem')
     $('#RigionPills').on('click','.RigionItem',function (){
+        BodyLoaderON();
         $('.RigionItem').removeClass('disabled')
         $(this).addClass('disabled')
         let id = $(this).attr('SubCategoryID');
         if(id === "0"){
             AllRigionNews();
         }else{
-            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#RigionLeadNews');
-            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#RigionSubNews')
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/0/sub`,'#RigionLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/0/sub`,'#RigionSubNews')
         }
     })
     AllRigionNews();
     function AllRigionNews(){
-        GetComponentNews('/get-all-news/16/lead_news/1','#RigionLeadNews');
-        GetComponentSubNews('/get-all-news/16/side_bar_news/2','#RigionSubNews');
+        GetComponentNews('/get-all-news/16/lead_news/1/0','#RigionLeadNews');
+        GetComponentSubNews('/get-all-news/16/side_bar_news/2/0','#RigionSubNews');
     }
     /*---------- END Rigion Section ------------*/
 
     /*---  Saradesh Section --------*/
     PillsCategory('/category-by-id/17','#SaradeshPills','SaradeshItem')
     $('#SaradeshPills').on('click','.SaradeshItem',function (){
+        BodyLoaderON();
         $('.SaradeshItem').removeClass('disabled')
         $(this).addClass('disabled')
         let id = $(this).attr('SubCategoryID');
         if(id === "0"){
             AllSaradeshNews();
         }else{
-            GetComponentNews(`/get-all-news/${id}/lead_news/1/sub`,'#SaradeshLeadNews');
-            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/sub`,'#SaradeshSubNews')
+            GetComponentNews(`/get-all-news/${id}/lead_news/1/0/sub`,'#SaradeshLeadNews');
+            GetComponentSubNews(`/get-all-news/${id}/side_bar_news/2/0/sub`,'#SaradeshSubNews')
         }
     })
     AllSaradeshNews();
     function AllSaradeshNews(){
-        GetComponentNews('/get-all-news/17/lead_news/1','#SaradeshLeadNews');
-        GetComponentSubNews('/get-all-news/17/side_bar_news/2','#SaradeshSubNews');
+        GetComponentNews('/get-all-news/17/lead_news/1/0','#SaradeshLeadNews');
+        GetComponentSubNews('/get-all-news/17/side_bar_news/2/0','#SaradeshSubNews');
     }
     /*---------- END Saradesh Section ------------*/
 </script>

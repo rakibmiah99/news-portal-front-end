@@ -1,29 +1,8 @@
 <html>
     <head>
-        <style>
-            .flex-container{
-                display: flex;
-            }
 
-            .one{
-                background: red;
-                height: 200px;
-            }
-            .two{
-                background: green;
-                height: 200px;
-            }
-            .th{
-                background: blue;
-                height: 200px;
-            }
-        </style>
     </head>
     <body>
-        <div class="flex-container">
-            <div class="one" style="flex-basis: 300px;"> 1 </div>
-            <div class="two"> 2 </div>
-            <div class="th"> 3 </div>
-        </div>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<URL>&t=<TITLE>" onclick="javascript:window.open(this.href, 'https://google.com', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook"> Share Facebook </a>
     </body>
 </html>

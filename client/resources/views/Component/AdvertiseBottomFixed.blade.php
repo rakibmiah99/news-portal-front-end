@@ -3,14 +3,17 @@
         <button type="button" id="AdvertiseFixedBottomClose" class="position-absolute btn" style="background: #F3F3F3;right: 25px;top: -15px;">
             <i class="fas fa-times"></i>
         </button>
-        <div class="image d-flex justify-content-center p-2" style="background: #F3F3F3;height: 100px;width: 100vw">
-            <img src="https://tpc.googlesyndication.com/simgad/8372039551353786955" class="h-100" >
+        <div id="layout_fixed_bottom" class="image d-flex justify-content-center p-2" style="background: #F3F3F3;height: 100px;width: 100vw">
+            <!--- Layout Fixed Bottom Advertise -->
         </div>
     </div>
 </div>
 
 
 <script>
+
+    Advertise('/advertise/layout_fixed_bottom_add',$('#layout_fixed_bottom'))
+
     $('#AdvertiseFixedBottomClose').click(function (){
         $('#AdvertiseBottomFixed').remove();
     })

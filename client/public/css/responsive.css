@@ -13,7 +13,7 @@
     .section-container{padding: 0 10px}
     .section-container-inner{padding: 0 10px;}
     .pl-md-0{padding-left: 20px!important;}
-
+    .d-none{display: none!important;}
     /*------2nd lead news section------------*/
 }
 
@@ -34,7 +34,13 @@
     .flRight{
         order: 3;
     }
-
+    .border-md-bottom{
+        border-bottom: 1px solid gray;
+    }
+    .d-none{display: none!important;}
+    .TrendingContent h2{
+        font-size: 20px;
+    }
     /*------ 2nd lead news section------------*/
 }
 
@@ -55,8 +61,13 @@
     .flRight{
         order: 3;
     }
-
-
+    .d-none{display: none!important;}
+    .border-md-bottom{
+        border-bottom: 1px solid gray;
+    }
+    .TrendingContent h2{
+        font-size: 20px;
+    }
     /*------2nd lead news section------------*/
 }
 
@@ -77,7 +88,10 @@
     .flRight{
         order: 3;
     }
-
+    .border-md-bottom{
+        border-bottom: 1px solid gray;
+    }
+    .d-none{display: none!important;}
     /*------2nd lead news section------------*/
 
 }

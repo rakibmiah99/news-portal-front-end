@@ -2,6 +2,16 @@
 <head>
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content={{$Seo[0]->description}}>
+    <meta name="keywords" content={{$Seo[0]->keywords}}>
+    <meta name="author" content="Rabbil Hasan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content={{$Seo[0]->title}}>
+    <meta property="og:title" content={{$Seo[0]->share_title}} />
+    <meta property="og:description" content={{$Seo[0]->description}} />
+    <meta property="og:image" content={{$Seo[0]->page_img}}/>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="{{asset('css/responsive.css') }}" rel="stylesheet" type="text/css" >
@@ -61,10 +71,6 @@
     @include('Layout.sitelead')
     @include('Layout.topmenu')
     @yield('trending')
-
-    <div class="addBanner mt-3 d-flex justify-content-center">
-        <img src="{{asset("img/addBanner.gif")}}">
-    </div>
 
     @yield('content')
 

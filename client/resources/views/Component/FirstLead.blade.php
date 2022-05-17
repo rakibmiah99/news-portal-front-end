@@ -1,3 +1,9 @@
+<div id="layout_top_add" class="addBanner mt-3 d-flex justify-content-center">
+    <!-- TOP Layout Advertise -->
+</div>
+
+
+
 <div class="section-container">
     <div id="firstLead" class="mt-3 row  mb-3 d-flex justify-content-between">
         <div class="flLeft border-right col-12 col-sm-12 col-md-6 col-lg-3" >
@@ -6,8 +12,8 @@
             </div>
 
             <!--               Advertise   --->
-            <div class="advertise mt-4 mb-3 text-center overflow-hidden">
-                <img  src="{{asset('img/300x300.gif')}}">
+            <div id="home_lead_left" class="advertise mt-4 mb-3 text-center overflow-hidden">
+
             </div>
         </div>
 
@@ -22,8 +28,8 @@
 
         <div class="flRight col-12 col-sm-12 col-md-6 col-lg-3 border-left" >
             <!--               Advertise   --->
-            <div class="advertise mt-0 mb-1 text-center overflow-hidden">
-                <img height="250px"  src="{{asset('img/300x300.gif')}}">
+            <div id="home_lead_right" class="advertise mt-0 mb-1 text-center overflow-hidden">
+                <!-- Home Lead Right Add -->
             </div>
             <div class="motamot">
                 <h5 class="text-center p-2 mb-0 border-top border-bottom fw-bold">মতামত</h5>
@@ -94,8 +100,13 @@
 
     HomeFirstLead();
 
+
+    Advertise('/advertise/layout_top_add',$('#layout_top_add'))
+    Advertise('/advertise/home_lead_left_add', $('#home_lead_left'))
+    Advertise('/advertise/home_lead_right_add', $('#home_lead_right'))
+
     function HomeFirstLead(){
-        axios.get(site.url('/get-all-news/1/lead_news/7')).then(function(response){
+        axios.get(site.url('/get-all-news/1/lead_news/7/0')).then(function(response){
             if(response.status === 200){
                 let data = response.data;
                 let mainLead = data[0];
@@ -105,7 +116,6 @@
                     <img  class="image img-fluid" src="${mainLead.image}">
                     <h2 class="mt-2">${mainLead.title}</h2>
                     <p>${mainLead.sort_description}</p>
-
                 </a>
             `);
 
@@ -160,7 +170,7 @@
 
 
         //Motamot
-        GetData('/get-all-opinion/1',function(res){
+        GetData('/get-all-opinion/1/0',function(res){
             if(res.status === 200){
                 let data = res.data;
                 for(let i =0; i< data.length; i++){
@@ -201,6 +211,7 @@
             }
         })
     }
+
 
 
     $(document).ready(function(){

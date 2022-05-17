@@ -24,6 +24,7 @@
     PillsCategory('/category-by-id/5','#InternationalPills','InternationalItem')
 
     $('#InternationalPills').on('click','.InternationalItem',function (){
+        BodyLoaderON();
         $('.InternationalItem').removeClass('disabled')
         $(this).addClass('disabled')
         let id = $(this).attr('SubCategoryID');
@@ -47,6 +48,7 @@
                     }else{
                         LeadNews.append(ErrorNotFoundData())
                     }
+                    BodyLoaderOFF();
                 }
             });
         }
@@ -58,7 +60,7 @@
 
     function AllInternationalNews(){
         $('#internationalLeadNews').empty()
-        GetData('/get-all-news/5/lead_news/4', function(response){
+        GetData('/get-all-news/5/lead_news/4/0', function(response){
             if(response.status === 200){
                 let data = response.data;
                 let order = 5;
@@ -71,6 +73,7 @@
                     }
                 }
             }
+            BodyLoaderOFF();
         })
 
     }

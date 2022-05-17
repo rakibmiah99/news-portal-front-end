@@ -8,48 +8,6 @@
 
         </div>
     </div>
-
-
-    <!--
-    <div class="time-line section-container">
-        <div class="time-line-item position-relative">
-            <div class="time-line-content">
-                <div class="time-line-dot position-absolute"></div>
-                <div class="time-line-content-date">
-                    ১০ এপ্রিল ২০২২, ১৭:০১
-                </div>
-                <div class="time-line-content-body pt-1 pb-1 titleNews2 border-0">
-                    <a href="#" class="news link">
-                        <img style="height: 100px;width: 150px;" class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <h4 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h4>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="time-line-item position-relative">
-            <div class="time-line-content">
-                <div class="time-line-dot position-absolute"></div>
-                <div class="time-line-content-date">
-                    ১০ এপ্রিল ২০২২, ১৭:০১
-                </div>
-                <div class="time-line-content-body pt-1 pb-1 titleNews2 border-0">
-                    <a href="#" class="news link">
-                        <img class="image" style="height: 100px;width: 150px;" src="{{asset('img/titleNews.jpg')}}">
-                        <h4 class="title m-0">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h4>
-                    </a>
-                </div>
-            </div>
-
-
-        </div>
-
-
-
-    </div>
-    -->
-
     <script>
         GetData('/get-all-weare', function (response){
             if(response.status === 200){
@@ -77,6 +35,7 @@
                         })
                     }
                 })
+                BodyLoaderOFF();
             }
         });
     </script>

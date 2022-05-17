@@ -58,22 +58,23 @@
     <script>
         PillsCategory('/category-by-id/12','#EconomyPills','EconomyItem')
         $('#EconomyPills').on('click','.EconomyItem',function (){
+            BodyLoaderON();
             $('.EconomyItem').removeClass('disabled')
             $(this).addClass('disabled')
             let id = $(this).attr('SubCategoryID');
             if(id === "0"){
                 AllEconomyNews();
             }else{
-                GetEconomyLeadNews(`/get-all-news/${id}/lead_news/2/sub`);
-                GetEconomySidebarNews(`/get-all-news/${id}/side_bar_news/5/sub`)
+                GetEconomyLeadNews(`/get-all-news/${id}/lead_news/2/0/sub`);
+                GetEconomySidebarNews(`/get-all-news/${id}/side_bar_news/5/0/sub`)
             }
         })
 
         AllEconomyNews();
 
         function AllEconomyNews(){
-            GetEconomyLeadNews('/get-all-news/12/lead_news/2');
-            GetEconomySidebarNews('/get-all-news/12/side_bar_news/5')
+            GetEconomyLeadNews('/get-all-news/12/lead_news/2/0');
+            GetEconomySidebarNews('/get-all-news/12/side_bar_news/5/0');
         }
         // Economy Lead News
         function GetEconomyLeadNews(url){
@@ -116,6 +117,7 @@
                             }
                         }
                     }
+                    BodyLoaderOFF();
                 }
             })
         }
@@ -138,22 +140,23 @@
         /*-------- Law & Court ----------- */
         PillsCategory('/category-by-id/9','#LawPills','LawItem')
         $('#LawPills').on('click','.LawItem',function (){
+            BodyLoaderON();
             $('.LawItem').removeClass('disabled')
             $(this).addClass('disabled')
             let id = $(this).attr('SubCategoryID');
             if(id === "0"){
                 AllLawNews();
             }else{
-                GetLawLeadNews(`/get-all-news/${id}/lead_news/2/sub`);
-                GetLawSidebarNews(`/get-all-news/${id}/side_bar_news/5/sub`)
+                GetLawLeadNews(`/get-all-news/${id}/lead_news/2/0/sub`);
+                GetLawSidebarNews(`/get-all-news/${id}/side_bar_news/5/0/sub`)
             }
         })
 
         AllLawNews();
 
         function AllLawNews(){
-            GetLawLeadNews('/get-all-news/9/lead_news/2');
-            GetLawSidebarNews('/get-all-news/9/side_bar_news/5')
+            GetLawLeadNews('/get-all-news/9/lead_news/2/0');
+            GetLawSidebarNews('/get-all-news/9/side_bar_news/5/0')
         }
         // Economy Lead News
         function GetLawLeadNews(url){
@@ -196,6 +199,8 @@
                             }
                         }
                     }
+
+                    BodyLoaderOFF();
                 }
             })
         }
