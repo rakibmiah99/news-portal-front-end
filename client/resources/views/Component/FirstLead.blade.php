@@ -172,10 +172,11 @@
         //Motamot
         GetData('/get-all-opinion/1/0',function(res){
             if(res.status === 200){
+               BodyLoaderOFF();
                 let data = res.data;
                 for(let i =0; i< data.length; i++){
                     if(data[i].order === "1"){
-                        motamot(data[i].image_file,data[i].title,data[i].short_description)
+                        motamot(data[i].image,data[i].title,data[i].short_description)
                     }
                 }
             }else{

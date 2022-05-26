@@ -19,8 +19,8 @@
             </div>
             <div class="col-12 col-md-3">
                 <!--               Advertise   --->
-                <div class="advertise mt-0 mb-1 text-center overflow-hidden">
-                    <img height="250px"  src="{{asset('img/300x300.gif')}}">
+                <div id="loacal_news_right_add" class="advertise mt-0 mb-1 text-center overflow-hidden">
+
                 </div>
 
                 <div id="areaFilter" class="areaChose col-12 col-md-6 col-lg-12  mt-3">
@@ -44,7 +44,7 @@
 
     <script>
 
-        Advertise('/advertise/home_lead_left_add', $('#home_lead_left'))
+        Advertise('/advertise/loacal_news_right_add', $('#loacal_news_right_add'))
 
 
         let urlData = MakeObjectFromBrowserUrlParams();

@@ -43,6 +43,7 @@
 
 
     GetData('/get-all-live-news/1/0', function (response){
+
         if(response.status === 200){
             let data = response.data;
             if(data.length > 0){
@@ -146,7 +147,6 @@
                     </a>
                 `);
                 }
-                BodyLoaderOFF();
             }
         });
     }

@@ -86,16 +86,16 @@
                     for(let i = 0; i < data.length; i++){
                         for(let j = 0; j < order; j++){
                             if(data[i].order == j+1){
-                                EconomyLeadNews(data[i].image,data[i].title)
+                                EconomyLeadNews(data[i].id,data[i].image,data[i].title)
                             }
                         }
                     }
                 }
             })
         }
-        function EconomyLeadNews(image,title){
+        function EconomyLeadNews(newsID,image,title){
             $('#economyLeadNews').append(`
-                <a class="card  mt-3 link">
+                <a href="/get-news/${newsID}" class="card  mt-3 link">
                     <img src="${image}" style="height: 169px;" " class="card-img"></img>
                     <div class="card-body pb-2 pt-2">
                         <h4 class="m-0">${title}</h4>
@@ -113,7 +113,7 @@
                     for(let i = 0; i < data.length; i++){
                         for(let j = 0; j < order; j++){
                             if(data[i].order == j+1){
-                                EconomySidebarNews(data[i].image,data[i].title,data[i].date)
+                                EconomySidebarNews(data[i].id,data[i].image,data[i].title,data[i].date)
                             }
                         }
                     }
@@ -121,9 +121,9 @@
                 }
             })
         }
-        function EconomySidebarNews(image,title,time){
+        function EconomySidebarNews(newsID,image,title,time){
             $('#economySidebarNews').append(`
-                <a href="#" class="news link border-bottom mt-2 mb-2">
+                <a href="/get-news/${newsID}" class="news link border-bottom mt-2 mb-2">
                     <img class="image" style="height: 70px" src="${image}">
                     <div>
                         <h5 class="title m-0 line-2" style="margin-bottom: 3px!important;">${title}</h5>
@@ -168,16 +168,16 @@
                     for(let i = 0; i < data.length; i++){
                         for(let j = 0; j < order; j++){
                             if(data[i].order == j+1){
-                                LawLeadNews(data[i].image,data[i].title)
+                                LawLeadNews(data[i].id,data[i].image,data[i].title)
                             }
                         }
                     }
                 }
             })
         }
-        function LawLeadNews(image,title){
+        function LawLeadNews(newsID,image,title){
             $('#lawLeadNews').append(`
-                <a class="card  mt-3 link">
+                <a href="/get-news/${newsID}" class="card  mt-3 link">
                     <img src="${image}" style="height: 169px;" " class="card-img"></img>
                     <div class="card-body pb-2 pt-2">
                         <h4 class="m-0">${title}</h4>
@@ -195,7 +195,7 @@
                     for(let i = 0; i < data.length; i++){
                         for(let j = 0; j < order; j++){
                             if(data[i].order == j+1){
-                                LawSidebarNews(data[i].image,data[i].title,data[i].date)
+                                LawSidebarNews(data[i].id,data[i].image,data[i].title,data[i].date)
                             }
                         }
                     }
@@ -204,9 +204,9 @@
                 }
             })
         }
-        function LawSidebarNews(image,title,time){
+        function LawSidebarNews(newsID,image,title,time){
             $('#lawSidebarNews').append(`
-                <a href="#" class="news link border-bottom mt-2 mb-2">
+                <a href="/get-news/${newsID}" class="news link border-bottom mt-2 mb-2">
                     <img class="image" style="height: 70px" src="${image}">
                     <div>
                         <h5 class="title m-0 line-2" style="margin-bottom: 3px!important;">${title}</h5>

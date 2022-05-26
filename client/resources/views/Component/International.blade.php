@@ -41,7 +41,7 @@
                         for(let i = 0; i < data.length; i++){
                             for(let j = 0; j < order; j++){
                                 if(data[i].order == j){
-                                    InternationalLeadNews(data[i].title,data[i].image,data[i].sort_description,data[i].date);
+                                    InternationalLeadNews(data[i].id,data[i].title,data[i].image,data[i].sort_description,data[i].date);
                                 }
                             }
                         }
@@ -68,7 +68,7 @@
 
                     for(let j = 0; j < order; j++){
                         if(data[i].order == j){
-                            InternationalLeadNews(data[i].title,data[i].image,data[i].sort_description,data[i].date);
+                            InternationalLeadNews(data[i].id,data[i].title,data[i].image,data[i].sort_description,data[i].date);
                         }
                     }
                 }
@@ -78,10 +78,10 @@
 
     }
 
-    function InternationalLeadNews(title,image,shortDesc,date){
+    function InternationalLeadNews(newsID,title,image,shortDesc,date){
         $('#internationalLeadNews').append(`
             <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <a href="#" class="card link">
+                <a href="/get-news/${newsID}" class="card link">
                     <img class="card-img" src="${image}" >
                     <div class="card-body">
                         <h3 class="line-2">${title}</h3>

@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\SeoModel;
 use Illuminate\Http\Request;
 
-class LiveNewsController extends Controller
+class ArchiveController extends Controller
 {
+    //
     function Page(){
         $seo = SeoModel::where('page_name','archive')->get();
-        return view('Pages.LiveNewsPage',["Seo" => $seo]);
+        return view('Pages.ArchivePage',["Seo" => $seo]);
     }
 }

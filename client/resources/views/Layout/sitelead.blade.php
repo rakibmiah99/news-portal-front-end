@@ -27,10 +27,10 @@
                     </select>
                 </div>
                 <div class="siteSocial d-none d-md-block mt-2">
-                    <a href="#" class="fab fa-facebook"></a>
-                    <a href="#" class="fab fa-youtube"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="{{env("FACEBOOK_URL")}}" class="fab fa-facebook"></a>
+                    <a href="{{env("TWITTER_URL")}}" class="fab fa-youtube"></a>
+                    <a href="{{env("YOUTUBE_URL")}}" class="fab fa-twitter"></a>
+                    <a href="{{env("INSTRAGRAM_URL")}}" class="fab fa-instagram"></a>
                 </div>
             </div>
         </div>

@@ -88,8 +88,6 @@ function PillsCategory(url,selector,clickableClassName){
 
 
 
-
-
 function GetComponentNews(url,element){
     GetData(url, function (response){
         if(response.status === 200 ){
@@ -99,19 +97,19 @@ function GetComponentNews(url,element){
             for(let i = 0; i < data.length; i++){
                 for(let j = 0; j < order; j++){
                     if(data[i].order == j+1){
-                        LeadNews(data[i].image,data[i].title)
+                        LeadNews(data[i].id,data[i].image,data[i].title)
                     }
                 }
             }
 
-            function LeadNews(image,title){
+            function LeadNews(newsID,image,title){
                 $(element).append(`
-                            <div class="card" >
+                            <a href="/get-news/${newsID}" class="card link" >
                                 <img src="${image}" class="card-img">
                                 <div class="card-body">
                                     <h5>${title}</h5>
                                 </div>
-                            </div>
+                            </a>
                         `)
             }
         }
@@ -126,13 +124,13 @@ function GetComponentSubNews(url,element){
             for(let i = 0; i < data.length; i++){
                 for(let j = 0; j < order; j++){
                     if(data[i].order == j+1){
-                        SubNews(data[i].image,data[i].title,data[i].date)
+                        SubNews(data[i].id,   data[i].image,data[i].title,data[i].date)
                     }
                 }
             }
-            function SubNews(image,title,time){
+            function SubNews(newsID,image,title,time){
                 $(element).append(`
-                             <a href="#" class="news link border-bottom">
+                             <a href="/get-news/${newsID}" class="news link border-bottom">
                                 <img class="image" style="height: 70px" src="${image}">
                                 <div>
                                     <h5 class="title m-0 line-2" style="margin-bottom: 5px!important;">${title}</h5>

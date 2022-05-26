@@ -1,13 +1,13 @@
-<div class="mt-5">
+<div class="mt-5 d-md-block d-none">
     <div class="section-container">
         <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
-            <h4 class="m-0">বিনোদন</h4>
+            <h4 class="m-0">ভিডিও</h4>
             <button class="btn btn-danger rounded-pill">সকল</button>
         </div>
     </div>
 </div>
 
-<div id="VideoComponent" class="bg-dark mt-3 p-4 section-container">
+<div id="VideoComponent" class="bg-dark d-md-block d-none mt-3 p-4 section-container">
     <div class="row" id="gallery-container">
 
 
@@ -18,7 +18,7 @@
 
 
 <script>
-    GetData('/get-all-video/4',function (response){
+    GetData('/get-all-video/4/0',function (response){
         if(response.status === 200){
             let data = response.data;
             let GalleryContainer = $('#gallery-container');

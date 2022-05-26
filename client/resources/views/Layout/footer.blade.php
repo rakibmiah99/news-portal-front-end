@@ -28,31 +28,31 @@
         <div class="col-12 col-md-4 mb-md-3 border-md-bottom">
             <ul class="footer-list">
                 <li class="footer-list-item float-start float-md-none">
-                    <a class="link f-18" href="#">
+                    <a class="link f-18" href="{{env("FACEBOOK_URL")}}">
                         <i class="fab fa-facebook"></i>
                         <span>ফেসবুক</span>
                     </a>
                 </li>
                 <li class="footer-list-item float-start float-md-none">
-                    <a class="link f-18" href="#">
+                    <a class="link f-18" href="{{env("TWITTER_URL")}}">
                         <i class="fab fa-twitter"></i>
                         <span>টুইটার</span>
                     </a>
                 </li>
                 <li class="footer-list-item float-start float-md-none">
-                    <a class="link f-18" href="#">
+                    <a class="link f-18" href="{{env("YOUTUBE_URL")}}">
                         <i class="fab fa-youtube"></i>
                         <span>ইউটিউব</span>
                     </a>
                 </li>
                 <li class="footer-list-item float-start float-md-none">
-                    <a class="link f-18" href="#">
+                    <a class="link f-18" href="{{env("LINKEDIN_URL")}}">
                         <i class="fab fa-linkedin"></i>
                         <span>লিঙ্কড ইন</span>
                     </a>
                 </li>
                 <li class="footer-list-item float-start float-md-none">
-                    <a class="link f-18" href="#">
+                    <a class="link f-18" href="{{env("INSTRAGRAM_URL")}}">
                         <i class="fab fa-instagram"></i>
                         <span>ইন্সট্রাগ্রাম</span>
                     </a>
@@ -62,24 +62,24 @@
         <div class="col-12 col-md-4">
             <ul class="footer-list">
                 <li class="footer-list-item mb-3 f-18 text-center text-md-right">
-                    <div>৯৫ সোহরাওয়ার্দী এভিনিউ</div>
-                    <div>বারিধারা ডিপ্লোমেটিক জোন, ঢাকা ১২১২</div>
+                    <div>{{env("ADDRESS_LINE1")}}</div>
+                    <div>{{env("ADDRESS_LINE2")}}</div>
                 </li>
                 <li class="footer-list-item mb-3 text-center text-md-right f-18">
                     <i class="fas fa-phone"></i>
-                    <span>+৮৮০ ৯৬১৩ ৬৭৮৬৭৮</span>
+                    <span>{{env("CONTACT_NO1")}}</span>
                 </li>
                 <li class="footer-list-item mb-3 text-center text-md-right f-18">
                     <i class="fas fa-mobile"></i>
-                    <span> +৮৮০ ১৩১৩ ৭৬৭৭৪২</span>
+                    <span>{{env("CONTACT_NO2")}}</span>
                 </li>
                 <li class="footer-list-item mb-3 text-center text-md-right f-18">
                     <i class="fab fa-whatsapp"></i>
-                    <span> +৮৮০ ১৭৭৭ ৭০৭৬০০</span>
+                    <span>{{env("WHATSAPP_NO")}}</span>
                 </li>
                 <li class="footer-list-item mb-3 text-center text-md-right f-18">
                     <i class="fas fa-envelope"></i>
-                    <span> info@dhakapost.com</span>
+                    <span>{{env("EMAIL")}}</span>
                 </li>
             </ul>
         </div>

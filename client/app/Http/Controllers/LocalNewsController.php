@@ -9,6 +9,6 @@ class LocalNewsController extends Controller
 {
     function Page(){
         $seo = SeoModel::where('page_name','local')->get();
-        return view('Pages.LocalNewsPage',["Seo" => $seo]);
+        return view('Pages.CategoryPage',["Seo" => $seo]);
     }
 }

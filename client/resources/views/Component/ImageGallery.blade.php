@@ -1,4 +1,4 @@
-<div id="ImageGallery"  class="mt-3">
+<div id="ImageGallery"  class="mt-3 d-none d-md-block">
     <div class="row">
         <div class="col-5" id="galleryFirstImage">
 

@@ -29,89 +29,25 @@
     <div class="col-12 col-sm-12 order-sm-1 col-md-12 col-lg-6 order-md-1 order-lg-2">
         <div class="mt-5">
             <div class="border-top shadow-sm border-bottom border-secondary  p-2  d-flex justify-content-between align-items-center">
-                <h4 class="m-0">অর্থনীতি </h4>
+                <h4 class="m-0"> প্রবাস </h4>
+                <ul class="nav nav-tabs" role="tablist" id="ForeignPills">
+                    <li class="nav-item">
+                        <a class="nav-link ForeignItem active" SubCategoryID="0" data-bs-toggle="tab" href="#">সকল</a>
+                    </li>
+                </ul>
                 <button class="btn btn-danger rounded-pill">সকল</button>
             </div>
         </div>
 
         <div class="row mt-3">
-            <div class="col-12 col-sm-6 col-md-7">
-                <div class="titleNews2 mt-2 border-left border-right">
-                    <a href="#" class="news link border-bottom mt-2 mb-2">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom mt-2 mb-2">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom mt-2 mb-2">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom mt-2 mb-2">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom mt-2 mb-2">
-                        <img class="image" src="{{asset('img/titleNews.jpg')}}">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
+            <div  class="col-12 col-sm-6 col-md-7">
+                <div id="foreignLeadNews" class="titleNews2 mt-2 border-left border-right">
+
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-5" style="margin-top: -10px;">
-                <div class="titleNews2 mt-2 border-left border-right">
-                    <a href="#" class="news link border-bottom ">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
-                    <a href="#" class="news link border-bottom">
-                        <div>
-                            <h5 class="title">রাশিয়া-ইউক্রেন যুদ্ধের সর্বশেষ</h5>
-                            <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>২ ঘন্টা আগে</div>
-                        </div>
-                    </a>
+                <div id="foreignRightNews" class="titleNews2 mt-2 border-left border-right">
+
                 </div>
             </div>
         </div>
@@ -164,6 +100,96 @@
             GetComponentSubNews('/get-all-news/12/side_bar_news/2/0','#HealthSubNews');
         }
         /*---------- END Health Section ------------*/
+
+
+        /*---  Foreign Section --------*/
+        PillsCategory('/category-by-id/2','#ForeignPills','ForeignItem')
+        $('#ForeignPills').on('click','.ForeignItem',function (){
+            BodyLoaderON();
+            $('.ForeignItem').removeClass('disabled')
+            $(this).addClass('disabled')
+            let id = $(this).attr('SubCategoryID');
+            if(id === "0"){
+                AllForeignNews();
+            }else{
+                ForeignLeadNews(`/get-all-news/${id}/lead_news/5/0/sub`,'#foreignLeadNews')
+                ForeignRightNews(`/get-all-news/${id}/side_bar_news/6/0/sub`,'#foreignRightNews')
+            }
+        })
+        AllForeignNews();
+
+
+
+        function AllForeignNews(){
+            ForeignLeadNews('/get-all-news/2/lead_news/5/0','#foreignLeadNews')
+            ForeignRightNews('/get-all-news/2/lead_news/5/0','#foreignRightNews')
+        }
+
+
+
+
+
+        function ForeignLeadNews(url,element){
+            GetData(url, function (response){
+                if(response.status === 200 ){
+                    let data = response.data;
+                    let order = 5;
+                    $(element).empty();
+                    for(let i = 0; i < data.length; i++){
+                        for(let j = 0; j < order; j++){
+                            if(data[i].order == j+1){
+                                LeadNews(data[i].id,data[i].image,data[i].title,data[i].date)
+                            }
+                        }
+                    }
+
+                    function LeadNews(newsID,image,title,date){
+                        $(element).append(`
+                           <a href="/get-news/${newsID}" class="news link border-bottom mt-2 mb-2">
+                                <img class="image" src="${image}">
+                                <div>
+                                    <h5 class="title line-2" style="margin-bottom: 3px!important;">${title}</h5>
+                                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(date)}</div>
+                                </div>
+                            </a>
+                        `)
+                    }
+                }
+            });
+        }
+
+        function ForeignRightNews(url,element){
+            GetData(url, function (response){
+                if(response.status === 200 ){
+                    BodyLoaderOFF();
+                    let data = response.data;
+                    let order = 6;
+                    $(element).empty();
+                    for(let i = 0; i < data.length; i++){
+                        for(let j = 0; j < order; j++){
+                            if(data[i].order == j+1){
+                                LeadNews(data[i].id,data[i].title,data[i].date)
+                            }
+                        }
+                    }
+
+                    function LeadNews(newsID,title,date){
+                        $(element).append(`
+                           <a href="/get-news/${newsID}" class="news link border-bottom ">
+                                <div>
+                                    <h5 class="title line-2" style="margin-bottom: 3px!important;">${title}</h5>
+                                    <div class="hour"><i class="fas  fa-clock" style="margin: 0 5px 0 0;"></i>${site.localeDate(date)}</div>
+                                </div>
+                            </a>
+                        `)
+                    }
+                }
+            });
+        }
+
+
+        /*---  End Foreign Section --------*/
+
 
 
         /*---  Jobs Section --------*/

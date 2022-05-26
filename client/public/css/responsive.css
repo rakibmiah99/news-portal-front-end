@@ -115,12 +115,20 @@
         margin-right: 10px;
     }
 
+    .advertise img{
+        margin-left: -55px;
+        transform: scale(0.6);
+    }
+
 
     /*------ 2nd lead news section------------*/
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
+    .advertise img{
+        margin-left: -40px;
+        transform: scale(0.73);
+    }
 }
 
 @media (min-width: 1200px) {

@@ -37,32 +37,20 @@ Route::get('/Category/National', function () {
 });
 
 Route::get('/LocalNews', [LocalNewsController::class,"Page"]);
-Route::get('/get-trending-news/{id}', function (){
-    return view('Pages.TrendingPage');
-});
+Route::get('/get-trending-news/{id}', [TrendingController::class, "Page"]);
 
-Route::get('/Archive', function () {
-    return view('Pages.ArchivePage');
-});
+Route::get('/Archive', [\App\Http\Controllers\ArchiveController::class, "Page"]);
 
 Route::get('/we',[WeController::class, "Page"]);
 Route::get('/SingleNews', function (){
     return view('Pages.SingleNewsPage');
 });
 
-Route::get('/get-news/{NewsID}', function () {
-    return view('Pages.SingleNewsPage');
-});
+Route::get('/get-news/{NewsID}', [SingleNewsController::class, "Page"]);
 
-Route::get('/get-news-by-category/{CategoryId}/{SubCategoryId?}', function () {
-    return view('Pages.CategoryPage');
-});
-Route::get('/get-news-by-sub-category/{SubCategoryId}', function () {
-    return view('Pages.SubCategoryPage');
-});
-Route::get('/get-live-news/{newsID}',function (){
-    return view('Pages.LiveNewsPage');
-});
+Route::get('/get-news-by-category/{CategoryId}/{SubCategoryId?}', [CategoryController::class, "Page"]);
+Route::get('/get-news-by-sub-category/{SubCategoryId}', [SubCategoryController::class, "Page"]);
+Route::get('/get-live-news/{newsID}',[LiveNewsController::class, "Page"]);
 
 Route::get('/privacy-policy', [PrivacyController::class, "Page"]);
 

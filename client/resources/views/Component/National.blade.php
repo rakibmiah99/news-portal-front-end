@@ -165,8 +165,6 @@
                         }
                     }
                 }
-
-                BodyLoaderOFF();
             }
         })
 

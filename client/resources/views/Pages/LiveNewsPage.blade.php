@@ -79,6 +79,60 @@
         let getUrl = MakeUrlFromBrowserUrlSegment()
 
 
+
+
+        $(document).ready(function (){
+            let fontsize = 18;
+            let printID = 1;
+            $('body').on('click','.fontPlusBtn', function (e){
+                e.preventDefault();
+                fontsize += 2;
+                $('.news-description *').css({
+                    fontSize: fontsize+"px"
+                })
+            })
+
+            $('body').on('click','.fontMinusBtn', function (e){
+                e.preventDefault();
+                fontsize -= 2;
+                $('.news-description *').css({
+                    fontSize: fontsize+"px"
+                })
+            })
+
+            $('body').on('click','.newsPrintBtn', function (e){
+                printID += 1;
+                e.preventDefault();
+                let nav = $(this).parent().parent();
+                nav.css('display','none')
+                let printableNews = $(this).parent().parent().parent().parent();
+                let newsTitle = printableNews.find('.news-title');
+                var newWin=window.open('','Print-Window'+printID);
+
+                newWin.document.open();
+
+                newWin.document.write(`
+                    <html>
+                        <head>
+                            <title>${newsTitle.html()}</title>
+                        </head>
+
+                        <body onload="window.print()">
+                            <img height="100px" src="http://bnbd.rakibmia.com/img/logo-color.png">
+                            ${printableNews.html()}
+                        </body>
+                    </html>
+                `);
+
+                newWin.document.close();
+                nav.css('display','flex')
+
+            })
+        })
+
+
+
+
         GetData(getUrl+"/"+100+"/"+0, function (response){
             if(response.status === 200){
                 let news = response.data.news;
@@ -117,6 +171,7 @@
         function News(news){
             $('#news').append(`
                     <div class="news-item">
+
                         <h1 class="news-title">${news.title}</h1>
                         <hr style="height: 10px;width: 100px;background: #cecbcb;">
                         <h4 class="news-representative">আন্তর্জাতিক ডেস্ক</h4>
@@ -124,28 +179,27 @@
                             <div class="news-date">${site.localeFullDate(news.date)}</div>
                             <ul class="nav">
                                 <li class="nav-item">
-                                    <a class="nav-link icon-link" href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="nav-link icon-link" href="https://www.facebook.com/sharer/sharer.php?u=${site.front_site_url+'/'+getUrl}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link icon-link" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="nav-link icon-link" href="http://twitter.com/share?text=text goes here&url=${site.front_site_url+'/'+getUrl}" target="_blank"><i class="fab fa-twitter"></i></a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link icon-link" href="#"><i class="fab fa-whatsapp"></i></a>
+                                    <a class="nav-link icon-link" href="whatsapp://send?text=${site.front_site_url+'/'+getUrl}"><i class="fab fa-whatsapp"></i></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link icon-link" href="#"><i class="fas fa-copy"></i></a>
+                                    <a class="nav-link icon-link newsLinkCopy" href="whatsapp://send?${site.front_site_url+'/'+getUrl}"><i class="fas fa-copy"></i></a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link icon-link newsPrintBtn" href="#"><i class="fas fa-print"></i></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link icon-link" href="#"><img src="https://cdn.dhakapost.com/media/common/google_news_180.png" height="20px" width="20px"> </a>
+                                    <a class="nav-link icon-link fontPlusBtn" href="#"><i>ফ+</i> </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link icon-link" href="#"><i class="fas fa-print"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link icon-link" href="#"><i>ফ+</i> </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link icon-link" href="#"><i>ফ-</i></a>
+                                    <a class="nav-link icon-link fontMinusBtn" href="#"><i>ফ-</i></a>
                                 </li>
                             </ul>
                         </div>
